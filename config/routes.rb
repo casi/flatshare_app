@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'static_pages/rules'
+  get '/rules',		to: 'static_pages#rules'
 end
