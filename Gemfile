@@ -11,6 +11,7 @@ gem 'jbuilder', 		'~> 2.5'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'awesome_print'
   gem 'byebug', platform: :mri
 end
 

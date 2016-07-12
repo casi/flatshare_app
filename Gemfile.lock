@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (7.0.0)
+    awesome_print (1.7.0)
     builder (3.2.2)
     byebug (9.0.5)
     coderay (1.1.1)
@@ -193,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   byebug
   coffee-rails (~> 4.2)
   guard (= 2.13.0)
