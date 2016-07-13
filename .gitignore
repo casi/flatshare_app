@@ -20,3 +20,6 @@
 
 # prevent conflicts between Spring and Git when using Guard
 /spring/*.pid
+
+# Ignore all files in public/uploads
+/public/uploads/*

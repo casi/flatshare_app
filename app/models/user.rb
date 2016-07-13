@@ -12,5 +12,14 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  validate :picture_size
 
+  private
+
+  # validates the size of an uploaded picture
+  def picture_size
+  	if picture.size > 5.megabytes
+  		errors.add(:picture, "should be less than 5 MB")
+  	end
+  end
 end

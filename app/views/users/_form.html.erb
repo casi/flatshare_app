@@ -1,11 +1,18 @@
 <%= form_for(@user, html: { multipart: true }) do |f| %>
-  <%= render 'shared/error_messages', object: @user %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control' %>
+
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday, class: 'form-control', placeholder: "Maybe you get a present... ;)" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control', 
+                  placeholder: "Say something short about you..." %>
 
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
@@ -14,8 +21,17 @@
   <%= f.password_field :password_confirmation, class: 'form-control' %>
   
   <span class="picture">
-    <%= f.file_field :picture %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
+
+<script type="text/javascript">
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
