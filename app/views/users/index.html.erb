@@ -1,0 +1,17 @@
+<% provide(:title, 'All users') %>
+<h1>Who actually lives in this flat?</h1>
+<h2>All Flatmates (<span><%= link_to "new flatmate", new_user_path %></span>)</h2>
+
+  <div class="row">
+    <% @users.each do |user| %>
+    <div class="col-md-4">
+      <h2><%= user.name %></h2>
+      <img class="img-circle" src="" 
+      alt="Foto of <%= user.name %>" width="135" height="140">
+      <p><%= link_to "What else...?", user %></p>
+      <%= link_to "edit", edit_user_path(user) %> |
+      <%= link_to "delete", user, method: :delete, 
+                                  data: { confirm: "Are you sure?" } %>
+    </div><!-- /.col-lg-4 -->
+    <% end %>  
+  </div><!-- /.row -->
