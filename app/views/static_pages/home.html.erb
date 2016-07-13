@@ -1,5 +1,18 @@
 <% provide(:title, "Home") %>
 
 <h1>Hello and welcome to our shared flat!</h1>
-<h2>What do you wish to be informed today?</h2>
 
+<div class="row">
+	<div class="col-md-6">
+		<h2>Our Address</h2>
+		<p class="lead">Soldiner Straße 88<br> 13359 Berlin</p>
+
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2425.6145709826096!2d13.38693212634847!3d52.55849642345481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8523c83cbea91%3A0x47935e1cf6016386!2sSoldiner+Str.+88%2C+13359+Berlin!5e0!3m2!1sde!2sde!4v1446249804238" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<div class="col-md-4 col-md-offset-2">
+		<h2>BVG-Info<br>(Public Transport System in Berlin)</h2>
+		<iframe src="http://www.bvg.de/bvgapi/WebWidgets/fahrinfo.html?c=1&w=300&t=6&f=" width="300" height="450" name="iFrame">
+			<p>Wir setzen auf Frames zur Anzeige von externen Inhalten. Wir sind leider nicht in der Lage, andere Möglichkeiten zu nutzen. Sie können die eingebettete Funktion hier nutzen: <a href="http://fahrinfo.bvg.de/Fahrinfo/bin/">Fahrinfo der BVG</a></p>
+		</iframe>
+	</div>
+</div>
