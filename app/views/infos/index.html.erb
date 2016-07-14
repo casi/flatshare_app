@@ -1,0 +1,20 @@
+<% provide(:title, 'Infos/News') %>
+<h1>Infos & News</h1>
+<h2><span class="lead">Write a new <%= link_to 'Info/News', new_info_path %></span></h2>
+
+<% @infos.each do |info| %>
+<div class="row">
+	<div class="col-md-2">
+		<br><br><br>
+		<%= info.author %><br>
+		<%= info.created_at %>
+		<%= link_to 'Edit', edit_info_path(info) %> |
+		<%= link_to 'Delete', info, method: :delete, 
+									data: { confirm: 'Are you sure?' } %>
+	</div>
+	<div class="col-md-8">
+		<h3><%= info.title %></h3>
+		<p><%= info.content %></p>
+	</div>
+</div>
+<% end %>
