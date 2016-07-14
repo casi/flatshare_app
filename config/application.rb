@@ -11,5 +11,15 @@ module FlatshareApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    # Version. Only attempt update on local machine
+    if Rails.env.development?
+    # Update version file from latest git tag
+      File.open('config/version', 'w') do |file|
+        file.write `git describe --tags --always`
+      end
+    end
+    config.version = File.read('config/version')
+
   end
 end
