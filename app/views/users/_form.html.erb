@@ -1,31 +1,45 @@
 <%= form_for(@user, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
+<div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
+</div>
 
+<div class="form-group">
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control' %>
+</div>
 
+<div class="form-group">
   <%= f.label :birthday %>
   <%= f.text_field :birthday, class: 'form-control', 
                     placeholder: "yyyy-mm-dd or dd.mm.yyyy ...for b-day present? ;)" %>
+</div>
 
+<div class="form-group">
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control', 
                   placeholder: "Say something short about you..." %>
+</div>
 
+<div class="form-group">
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
+</div>
 
+<div class="form-group">
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
-  
+</div>
+
+<div class="form-group">  
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
+</div>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
 <% end %>
 
 <script type="text/javascript">

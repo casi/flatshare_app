@@ -1,20 +1,20 @@
 <% provide(:title, 'All users') %>
 <h1>Who actually lives in this flat?</h1>
-<h2>All Flatmates (<span><%= link_to "new flatmate", new_user_path %></span>)</h2>
+<h2><span class="lead">All Flatmates (<%= link_to "new flatmate", new_user_path %>)</span></h2>
 
   <div class="row">
     <% @users.each do |user| %>
     <div class="col-md-4">
       <h3><%= user.name %></h3>
-      <%= image_tag user.picture.url if user.picture? %>
+      <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
       <!--img class="img-circle" src="" 
       alt="Foto of <%= user.name %>" width="135" height="140"-->
-      <p><%= "Email: #{user.email}" if user.email? %></p>
+      <p><%= user.email if user.email? %></p>
       <p><%= "My Birthday: #{user.birthday.to_s}" if user.birthday? %></p>
       <p><%= "About me: #{user.description}" if user.description? %></p>
       <%= link_to "edit", edit_user_path(user) %> |
       <%= link_to "delete", user, method: :delete, 
-                                  data: { confirm: "Are you sure?" } %>
+                                  data: { confirm: "Are you sure want to delete this user?? Think about again!" } %>
     </div>
     <% end %>  
   </div>
