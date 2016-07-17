@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :infos
+  
   before_save { email.downcase! }
 
   default_scope -> { order(created_at: :desc) }
@@ -21,5 +23,12 @@ class User < ApplicationRecord
   	if picture.size > 5.megabytes
   		errors.add(:picture, "should be less than 5 MB")
   	end
+  end
+
+  # Returns the hash digest of the given string. (for fixtures)
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 end

@@ -12,6 +12,11 @@
 </div>
 
 <div class="form-group">
+  <%= f.label :phone %>
+  <%= f.telephone_field :phone, class: 'form-control' %>
+</div>
+
+<div class="form-group">
   <%= f.label :birthday %>
   <%= f.text_field :birthday, class: 'form-control', 
                     placeholder: "yyyy-mm-dd or dd.mm.yyyy ...for b-day present? ;)" %>
@@ -24,6 +29,13 @@
 </div>
 
 <div class="form-group">
+  <%= f.label :picture %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+</div>
+
+<div class="form-group">
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
 </div>
@@ -31,12 +43,6 @@
 <div class="form-group">
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
-</div>
-
-<div class="form-group">  
-  <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
 </div>
 
   <%= f.submit yield(:button_text), class: 'btn btn-primary' %>

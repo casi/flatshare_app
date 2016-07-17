@@ -16,7 +16,8 @@ class InfosController < ApplicationController
     @info = Info.new(info_params)
 
     if @info.save
-      redirect_to infos_url, notice: 'Info successfully created.'
+      flash[:success] = 'Info successfully created.'
+      redirect_to infos_url
     else
       render :new
     end
@@ -24,7 +25,8 @@ class InfosController < ApplicationController
 
   def update
     if @info.update(info_params)
-      redirect_to infos_url, notice: 'Info updated.'
+      flash[:success] = 'Info updated.'
+      redirect_to infos_url
     else
       render :edit
     end
@@ -40,7 +42,8 @@ class InfosController < ApplicationController
 
   def destroy
     if @info.destroy
-      redirect_to infos_url, notice: 'Info deleted.'
+      flash[:success] = 'Info deleted.'
+      redirect_to infos_url
     end
   end
 
@@ -51,7 +54,7 @@ class InfosController < ApplicationController
   end
 
   def info_params
-    params.require(:info).permit(:author, :title, :content)
+    params.require(:info).permit(:user_id, :title, :content)
   end
 
   def archive_params

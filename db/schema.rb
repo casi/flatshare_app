@@ -13,19 +13,22 @@
 ActiveRecord::Schema.define(version: 20160714002200) do
 
   create_table "infos", force: :cascade do |t|
-    t.string   "author"
     t.string   "title"
     t.text     "content"
     t.boolean  "archived"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_infos_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_infos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "phone"
     t.date     "birthday"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"

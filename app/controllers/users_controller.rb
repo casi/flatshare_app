@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Flatshare App!"
-      redirect_to @user
+      redirect_to users_url
     else
       render :new
     end
@@ -40,7 +40,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :birthday, 
-                                  :description, :password_confirmation, :picture)
+    params.require(:user).permit(:name, :email, :phone, :birthday, 
+                                  :description, :password,
+                                  :password_confirmation, :picture)
   end
 end
