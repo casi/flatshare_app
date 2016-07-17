@@ -6,7 +6,7 @@ This small application (written with brand new **Rails 5**) lets members of a sh
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisities
+### Prerequisites
 
 To start developing you need a running version of **Ruby (at least 2.3.0)** on your local machine.
 
@@ -20,7 +20,7 @@ bundle install
 do the database setup (migrate and seed)
 
 ```
-rake db:setup
+rails db:setup
 ```
 start the local webserver
 
@@ -52,6 +52,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 v1.0: 
 
 - [ ] News Archive 
+- [ ] News comments
 - [ ] Housework Rota (static)
 
 v1.1:
