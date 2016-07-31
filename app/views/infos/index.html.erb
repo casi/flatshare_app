@@ -1,21 +1,29 @@
 <% provide(:title, 'Infos/News') %>
 <h1>Infos & News</h1>
-<h2><span class="lead">What's new in our shared flat community? <br>Write a new <%= link_to 'Info/News', new_info_path %></span></h2>
+<h2><span class="lead">What's new in our shared flat community? <br>Write a new <%= link_to 'Info/News', new_info_path %></span><br>
+	<span class="small"><%= link_to 'Archived Infos/News', archived_infos_path %>
+		(<%= @archived_count %>)</span>
+</h2>
 
 <div class="row">
 	<!-- left content -->
 	<div class="col-md-8">
 		<% @infos.each do |info| %>
-		<div class="col-md-2">
-			<%= info.user ? info.user.name : "Deleted User" %><br>
-			<%= info.created_at %>
-			<%= link_to 'Edit', edit_info_path(info) %> |
-			<%= link_to 'Delete', info, method: :delete, 
-									data: { confirm: 'Delete this info. Are you sure?' } %>
-		</div>
-		<div class="col-md-10">
-			<h3><%= info.title %></h3>
-			<p><%= info.content %></p>
+		<div class="row info">
+			<div class="col-md-2">
+				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? %>
+				<%= info.user ? info.user.name : "Deleted User" %><br>
+				<%= link_to 'Edit', edit_info_path(info) %> |
+				<%= link_to 'to archive', info_path(info, "info[archived]" => true), method: :put %>
+			</div>
+			<div class="col-md-9">
+				<span class="small"><%= info.created_at %></span>
+				<h3>
+					<%= link_to info.title, info_path(info) %>
+					<span class="small">(<%= info.comments.count %> comment(s))</span>
+				</h3>
+				<p><%= info.content %></p>
+			</div>
 		</div>
 		<% end %>
 	</div>

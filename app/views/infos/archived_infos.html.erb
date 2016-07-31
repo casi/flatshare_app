@@ -1,0 +1,24 @@
+<% provide(:title, 'Archive') %>
+<h1>Infos & News Archive</h1>
+
+<div class="row">
+	<div class="col-md-8">
+		<% @infos.each do |info| %>
+		<div class="row info">
+			<div class="col-md-2">
+				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? %>
+				<%= info.user ? info.user.name : "Deleted User" %><br>
+			</div>
+			<div class="col-md-9">
+				<span class="small"><%= info.created_at %></span>
+				<h3>
+					<%= link_to info.title, info_path(info) %>
+					<span class="small">(<%= info.comments.count %> comment(s))</span>
+				</h3>
+				<p><%= info.content %></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+</div>

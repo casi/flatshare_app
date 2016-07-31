@@ -16,7 +16,6 @@
   	<div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>">
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
           <span class="sr-only"><%= message_type %>:</span>
           <%= message %>
         </div>

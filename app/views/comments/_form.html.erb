@@ -1,0 +1,14 @@
+<%= form_for([@info, @info.comments.build]) do |f| %>
+	<div class="form-group">
+	<%= f.label :user %>
+	<%= f.collection_select(:user_id, User.order(:id), :id, :name,
+							html: {class: 'form-control'}) %><br>
+	</div>
+	<div class="form-group">
+		<%= f.label :comment %>
+		<%= f.text_area :body, size: '20x10', class: 'form-control' %>
+	</div>
+	<div class="actions">
+		<%= f.submit 'Save', class: 'btn btn-primary' %>
+	</div>
+<% end %>

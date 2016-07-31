@@ -51,8 +51,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ### TODO:
 v1.0: 
 
-- [ ] News Archive 
-- [ ] News comments
+- [x] News Archive 
+- [x] News comments
 - [ ] Housework Rota (static)
 
 v1.1:

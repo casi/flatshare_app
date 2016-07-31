@@ -2,7 +2,12 @@ class InfosController < ApplicationController
   before_action :set_info, only: [:show, :edit, :update, :destroy]
 
   def index
-    @infos = Info.all
+    @infos = Info.not_archived
+    @archived_count = Info.archived.count
+  end
+
+  def show 
+    @info = Info.find(params[:id])
   end
 
   def new
@@ -14,6 +19,7 @@ class InfosController < ApplicationController
 
   def create
     @info = Info.new(info_params)
+    @info.archived = false
 
     if @info.save
       flash[:success] = 'Info successfully created.'
@@ -32,13 +38,10 @@ class InfosController < ApplicationController
     end
   end
 
-  #TODO: def archive 
-  #  @info.archived = true
-    
-  #  if @info.update(archive_param)
-  #    redirect_to infos_url, notice: 'Info archived.'
-  #  end
-  #end
+  def archived
+    @infos = Info.archived
+    render :archived_infos
+  end
 
   def destroy
     if @info.destroy
@@ -54,10 +57,7 @@ class InfosController < ApplicationController
   end
 
   def info_params
-    params.require(:info).permit(:user_id, :title, :content)
+    params.require(:info).permit(:user_id, :title, :content, :archived)
   end
 
-  def archive_params
-    params.require(:info).permit(:archived)
-  end
 end

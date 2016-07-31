@@ -5,7 +5,7 @@
 <div class="row">
   <% @users.each do |user| %>
   <div class="col-md-4">
-    <div class="media">
+    <div class="media info">
       <div class="media-left">
         <div class="media-object">
           <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
@@ -16,6 +16,8 @@
         <%= user.email if user.email? %></br>
         <%= "Phone: #{user.phone}" if user.phone? %></br>
         <%= "Birthday: #{user.birthday.to_s}" if user.birthday? %></br>
+        <%= "Moved in: #{user.moved_in}" if user.moved_in? %></br>
+        <%= "Moved out: #{user.moved_out}" if user.moved_out? %></br>
       </div>
       <p><%= "\"#{user.description}\"" if user.description? %></p>
       <%= link_to "edit", edit_user_path(user) %> |

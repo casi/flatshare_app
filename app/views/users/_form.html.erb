@@ -23,8 +23,17 @@
 </div>
 
 <div class="form-group">
+  <%= f.label :moved_in %>
+  <%= f.text_field :moved_in, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :moved_out %>
+  <%= f.text_field :moved_out, class: 'form-control' %>
+</div>
+
+<div class="form-group">
   <%= f.label :description %>
-  <%= f.text_area :description, class: 'form-control', 
+  <%= f.text_area :description, class: 'form-control', size: '10x6',
                   placeholder: "Say something short about you..." %>
 </div>
 
