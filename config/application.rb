@@ -19,7 +19,10 @@ module FlatshareApp
         file.write `git describe --tags --always`
       end
     end
+    
     config.version = File.read('config/version')
+    config.time_zone = 'Berlin'
+    config.active_record.default_timezone = :local
 
   end
 end
