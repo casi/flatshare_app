@@ -53,6 +53,7 @@ v1.0:
 
 - [x] News Archive 
 - [x] News comments
+- [X] Questions & Answers
 - [ ] Housework Rota (static)
 
 v1.1:

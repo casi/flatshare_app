@@ -23,3 +23,6 @@
 
 # Ignore all files in public/uploads
 /public/uploads/*
+
+# Ignore all passenger related files
+passenger*

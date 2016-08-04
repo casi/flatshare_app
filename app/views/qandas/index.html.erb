@@ -1,0 +1,18 @@
+<% provide(:title, 'Q&A') %>
+<h1>Questions & Answers</h1>
+<h2><span class="lead">Do you have questions or answers about our flatshare, Berlin or Germany in general? <br>Just ask <%= link_to 'a new question', new_qanda_path %>!</span>
+</h2>
+
+<div class="row">
+	<% @qandas.each do |qanda| %>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 question">
+			<h4><%= qanda.question %> <%= link_to edit_qanda_path(qanda) do %>
+  				<span class="glyphicon glyphicon-pencil"></span>
+  			<% end %>
+			</h4>
+			<%= qanda.answer? ? simple_format(qanda.answer) : "..." %>
+		</div>
+	</div>
+	<% end %>
+</div>

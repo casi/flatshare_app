@@ -1,0 +1,19 @@
+<%= form_for @qanda do |f| %>
+<%= render 'shared/error_messages', object: @qanda %>
+
+<div class="form-group">
+	<%= f.label :question %>
+	<%= f.text_field :question, class: 'form-control',
+	placeholder: 'What do you want to know?' %>
+</div>
+
+<div class="form-group">
+	<%= f.label :answer %>
+	<%= f.text_area :answer, size: '10x10', class: 'form-control',
+	placeholder: 'if you know the answer...' %>
+</div>
+
+<div class="actions">
+	<%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+</div>
+<% end %>

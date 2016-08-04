@@ -7,9 +7,9 @@ $gray-medium-light: #eaeaea;
 $bg-color: #fafafa;
 
 @mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
 }
 
 /* universal */
@@ -89,6 +89,23 @@ p {
 	border: solid 1px #efefef;
 }
 
+.question {
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding: 10px 4px 12px 8px;
+	border: solid 1px #efefef;
+
+	.small {
+		margin-right: 15px;
+	}
+	h4 {
+		margin: 5px 12px 12px;
+	}
+	p {
+		margin: 0 10px;
+	}
+}
+
 /* footer */
 
 footer {
@@ -108,39 +125,39 @@ footer {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+	@include box_sizing;
 }
 
 input {
-  height: auto !important;
+	height: auto !important;
 }
 
 #error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
+	color: red;
+	ul {
+		color: red;
+		margin: 0 0 30px 0;
+	}
 }
 
 .field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
+	@extend .has-error;
+	.form-control {
+		color: $state-danger-text;
+	}
 }
 
 
 /* miscellaneous */
 
 .debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
 }
 

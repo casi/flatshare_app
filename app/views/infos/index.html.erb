@@ -22,7 +22,7 @@
 					<%= link_to info.title, info_path(info) %>
 					<span class="small">(<%= info.comments.count %> comment(s))</span>
 				</h3>
-				<p><%= info.content %></p>
+				<%= simple_format(info.content) %>
 			</div>
 		</div>
 		<% end %>
