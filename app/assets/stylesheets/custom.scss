@@ -75,6 +75,11 @@ p {
 	}
 }
 
+.alert {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
 /* content */
 #rules {
 	li {
@@ -89,7 +94,7 @@ p {
 	border: solid 1px #efefef;
 }
 
-.question {
+.question, .list {
 	background-color: #fff;
 	margin-bottom: 10px;
 	padding: 10px 4px 12px 8px;
@@ -106,13 +111,24 @@ p {
 	}
 }
 
+.panel {
+	h3 {
+		text-align: center;
+	}
+	.list-group-item {
+		font-size: 1.2em;
+	}
+}
+
 /* footer */
 
 footer {
 	margin-top: 45px;
+	margin-bottom: 20px;
 	padding-top: 5px;
 	border-top: 1px solid $gray-medium-light;
 	color: $gray-light;
+	text-align: center;
 	a {
 		color: $gray;
 		&:hover {

@@ -54,6 +54,7 @@ v1.0:
 - [x] News Archive 
 - [x] News comments
 - [X] Questions & Answers
+- [X] Lists (Shopping)
 - [ ] Housework Rota (static)
 
 v1.1:

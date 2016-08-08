@@ -18,7 +18,7 @@ class QandasControllerTest < ActionDispatch::IntegrationTest
   test "should create qanda" do
     assert_difference('Qanda.count') do
 		post qandas_url, params: { qanda: { question: @qanda.question, 
-                                           answer: @qanda.answer } }
+                                        answer: @qanda.answer } }
     end
 
     assert_redirected_to qandas_url
@@ -31,7 +31,7 @@ class QandasControllerTest < ActionDispatch::IntegrationTest
 
   test "should update qanda" do
     patch qanda_url(@qanda), params: { qanda: { question: @qanda.question, 
-                                            	answer: @qanda.answer } }
+                                            	  answer: @qanda.answer } }
     assert_redirected_to qandas_url
   end
 

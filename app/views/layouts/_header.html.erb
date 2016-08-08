@@ -11,13 +11,14 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to "Infos",          		root_path %></li>
-					<li><%= link_to "Q&A",        			qandas_path %></li>
-					<li><%= link_to "House Rules",    		rules_path %></li>
+					<li><%= link_to "Infos", root_path, title: 'News & Infos' %></li>
+					<li><%= link_to "List",	listitems_path, title: 'Shopping List' %></li>
+					<li><%= link_to "Q&A", qandas_path, title: 'Questions & Answers' %></li>
+					<li><%= link_to "Rules", rules_path, title: 'House Rules' %></li>
 					<!--li><%= link_to "Calendar",    		'#' %></li-->
 					<!--li><%= link_to "Housework Rota", 	'#' %></li-->
-					<li><%= link_to "Flatmates",     		users_path %></li>
+					<li><%= link_to "Flatmates", users_path, title: 'Persons we live together' %></li>
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</header>

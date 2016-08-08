@@ -10,13 +10,13 @@
 	<div class="col-md-8">
 		<% @infos.each do |info| %>
 		<div class="row info">
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2 col-xs-12">
 				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? %>
 				<%= info.user ? info.user.name : "Deleted User" %><br>
 				<%= link_to 'Edit', edit_info_path(info) %> |
 				<%= link_to 'to archive', info_path(info, "info[archived]" => true), method: :put %>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-10 col-xs-12">
 				<span class="small"><%= info.created_at %></span>
 				<h3>
 					<%= link_to info.title, info_path(info) %>

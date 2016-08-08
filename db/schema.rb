@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803190826) do
+ActiveRecord::Schema.define(version: 20160805163723) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -33,11 +33,29 @@ ActiveRecord::Schema.define(version: 20160803190826) do
     t.index ["user_id"], name: "index_infos_on_user_id"
   end
 
+  create_table "listitems", force: :cascade do |t|
+    t.string   "item"
+    t.boolean  "done"
+    t.boolean  "todoitem"
+    t.boolean  "shoppingitem"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "qandas", force: :cascade do |t|
     t.string   "question"
     t.text     "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sharedlists", force: :cascade do |t|
+    t.string   "item"
+    t.boolean  "done"
+    t.boolean  "todoitem"
+    t.boolean  "shoppingitem"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,12 +1,24 @@
 User.create!(name:                  "Example User (=Admin user)",
-            email:                  "example@example.org",
-            phone:                  "1234567890",
-            birthday:               "2000-01-01",
-            description:            "write something interesting about you ;)",
-            password:               "password",
-            password_confirmation:  "password",
-            admin: true)
+             email:                 "example@example.org",
+             phone:                 "1234567890",
+             birthday:              "2000-01-01",
+             description:           "write something interesting about you ;)",
+             password:              "password",
+             password_confirmation: "password",
+             admin:                 true)
 
+Listitem.create!(item: "no items yet",
+                 done: false
+)
+
+# just for testing purposes ==================================
+=begin
+#10 dummy shoppinglist items
+10.times do |n|
+  item = Faker::Lorem.sentence
+  Listitem.create!(item:         item,
+                   done:         false) 
+end
 
 #2 dummy users
 2.times do |n|
@@ -36,4 +48,4 @@ end
                title:  title,
                content: content,
                archived: false)
-end
+=end
