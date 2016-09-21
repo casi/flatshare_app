@@ -17,7 +17,7 @@
 				<%= link_to 'to archive', info_path(info, "info[archived]" => true), method: :put %>
 			</div>
 			<div class="col-md-9 col-sm-10 col-xs-12">
-				<span class="small"><%= info.created_at %></span>
+				<span class="small"><%= l info.created_at, format: :short %></span>
 				<h3>
 					<%= link_to info.title, info_path(info) %>
 					<span class="small">(<%= info.comments.count %> comment(s))</span>

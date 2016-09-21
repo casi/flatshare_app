@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'infos#index'
   get '/rules',         to: 'static_pages#rules'
+  get '/housework',     to: 'static_pages#housework'
   get 'infos/archived', to: 'infos#archived', as: 'archived_infos'
 
   resources :infos do
