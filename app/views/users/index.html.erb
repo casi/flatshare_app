@@ -20,9 +20,11 @@
         <%= "Moved out: #{user.moved_out}" if user.moved_out? %></br>
       </div>
       <p><%= "\"#{user.description}\"" if user.description? %></p>
-      <%= link_to "edit", edit_user_path(user) %> |
-      <%= link_to "delete", user, method: :delete, 
+      <% if current_user.admin? %>
+        <%= link_to "edit", edit_user_path(user) %> |
+        <%= link_to "delete", user, method: :delete, 
         data: { confirm: "Are you sure want to delete #{user.name}? Think about again!" } %>
+      <% end %>
     </div><br>
   </div>
   <% end %>  

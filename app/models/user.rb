@@ -17,6 +17,13 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   validate :picture_size
 
+  # Returns the hash digest of the given string. (for fixtures)
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
   private
 
   # validates the size of an uploaded picture
@@ -26,10 +33,4 @@ class User < ApplicationRecord
   	end
   end
 
-  # Returns the hash digest of the given string. (for fixtures)
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
 end

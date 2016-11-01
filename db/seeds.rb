@@ -12,7 +12,7 @@ Listitem.create!(item: "no items yet",
 )
 
 # just for testing purposes ==================================
-=begin
+
 #10 dummy shoppinglist items
 10.times do |n|
   item = Faker::Lorem.sentence
@@ -48,4 +48,4 @@ end
                title:  title,
                content: content,
                archived: false)
-=end
+ end

@@ -36,10 +36,8 @@ ActiveRecord::Schema.define(version: 20160805163723) do
   create_table "listitems", force: :cascade do |t|
     t.string   "item"
     t.boolean  "done"
-    t.boolean  "todoitem"
-    t.boolean  "shoppingitem"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "qandas", force: :cascade do |t|
@@ -47,15 +45,6 @@ ActiveRecord::Schema.define(version: 20160805163723) do
     t.text     "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "sharedlists", force: :cascade do |t|
-    t.string   "item"
-    t.boolean  "done"
-    t.boolean  "todoitem"
-    t.boolean  "shoppingitem"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

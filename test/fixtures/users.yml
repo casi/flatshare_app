@@ -1,6 +1,14 @@
 carsten: 
   id: 1
   name: Carsten Behnert
-  email: carsten@example.org
+  email: example@example.org
   password_digest: <%= User.digest('password') %>
   admin: true
+
+tina:
+  id: 2
+  name: Tina Spackowski
+  email: geile@tina.org
+  password_digest: <%= User.digest('password') %>
+  admin: false
+  

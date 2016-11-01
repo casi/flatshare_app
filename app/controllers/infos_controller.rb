@@ -1,4 +1,5 @@
 class InfosController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :set_info, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,7 +19,7 @@ class InfosController < ApplicationController
   end
 
   def create
-    @info = Info.new(info_params)
+    @info = current_user.infos.build(info_params)
     @info.archived = false
 
     if @info.save
@@ -52,12 +53,15 @@ class InfosController < ApplicationController
 
   private
 
-  def set_info
-    @info = Info.find(params[:id])
-  end
+    def info_params
+      params.require(:info).permit(:title, :content, :archived)
+    end
 
-  def info_params
-    params.require(:info).permit(:user_id, :title, :content, :archived)
-  end
+    # Before actions
+
+    def set_info
+      @info = Info.find(params[:id])
+    end
+
 
 end

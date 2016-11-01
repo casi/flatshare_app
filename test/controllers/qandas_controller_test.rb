@@ -1,11 +1,17 @@
 require 'test_helper'
 
 class QandasControllerTest < ActionDispatch::IntegrationTest
-  setup do
+  
+  def setup
     @qanda = qandas(:one)
+    @user = users(:carsten)
   end
 
   test "should get index" do
+    get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                          password: 'password' } }
+
     get qandas_url
     assert_response :success
   end

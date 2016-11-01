@@ -20,7 +20,7 @@
 				<span class="small"><%= l info.created_at, format: :short %></span>
 				<h3>
 					<%= link_to info.title, info_path(info) %>
-					<span class="small">(<%= info.comments.count %> comment(s))</span>
+					<span class="badge"><%= info.comments.count if info.comments.count > 0 %></span>
 				</h3>
 				<%= simple_format(info.content) %>
 			</div>

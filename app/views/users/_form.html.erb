@@ -3,7 +3,7 @@
 
 <div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.text_field :name, class: 'form-control', placeholder: "firstname is enough" %>
 </div>
 
 <div class="form-group">
@@ -56,6 +56,7 @@
 
   <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
 <% end %>
+<br>
 
 <script type="text/javascript">
   $('#user_picture').bind('change', function() {

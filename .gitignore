@@ -24,5 +24,8 @@
 # Ignore all files in public/uploads
 /public/uploads/*
 
+# Ignore all files in public/images
+/public/images/*
+
 # Ignore all passenger related files
 passenger*
