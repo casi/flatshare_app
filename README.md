@@ -55,9 +55,11 @@ v1.0:
 - [x] News comments
 - [X] Questions & Answers
 - [X] Lists (Shopping)
-- [ ] Housework Rota (static)
+- [X] Session Handling & Basic Authentication
+- [ ] Cashpoint Manager 
+- [ ] Housework Rota (dynamic)
+- [ ] Full Test Coverage (!!!)
 
 v1.1:
 
 - [ ] Calendar (Events etc)
-- [ ] Housework Rota (dynamic)
