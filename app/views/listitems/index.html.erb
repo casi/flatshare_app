@@ -1,6 +1,6 @@
 <% provide(:title, 'Shopping List') %>
-<h1>Shopping List</h1>
-<h2><span class="lead">What is needed for the shared flat (e.g. washing-up liquid, toilet paper, laundry detergent, ...)?<br>Everyone should buy these things from time to time.</h2>
+<h1>Flatshare Lists</h1>
+<h2><span class="lead">What is needed for the shared flat (e.g. washing-up liquid, toilet paper, laundry detergent, etc.)?<br>Everyone should buy these things from time to time.</h2>
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 col-xs-12">
@@ -10,7 +10,7 @@
 				<h3>Shopping List 
 					<a href="#" title="add something to list" data-toggle="modal" data-target="#shopping">
 						<span class="glyphicon glyphicon-plus small" aria-hidden="true"></span></a>
-					<%= link_to listitems_path, title: 'clean list', action: 'destroy_all', method: :delete do %>
+					<%= link_to listitems_path, title: 'clean list', action: 'destroy', method: :delete do %>
 						<span class="glyphicon glyphicon-remove small" aria-hidden="true"></span>
 					<% end %>
 				</h3>
@@ -28,7 +28,7 @@
 	</div>
 </div>
 
-<!-- Modal -->
+<!-- shopping Modal -->
 <div class="modal" id="shopping" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

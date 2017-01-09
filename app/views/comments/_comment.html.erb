@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-4 col-sm-4">
+  <div class="col-md-3 col-sm-3 col-xs-3">
   	<b><%= comment.user ? comment.user.name : "Deleted User" %></b><br>
   	<span class="small"><%= l comment.created_at, format: :short %></span>
   </div>
 
-  <div class="col-md-8 col-sm-8">
+  <div class="col-md-8 col-sm-8 col-xs-8">
   	<%= simple_format(comment.body, class: 'small') %>
   </div>
 </div>

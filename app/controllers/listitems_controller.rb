@@ -26,7 +26,7 @@ class ListitemsController < ApplicationController
     end
   end
 
-  def destroy_all
+  def destroy
     @shopping_items = Listitem.where(done: true)
 
     if @shopping_items.count > 0

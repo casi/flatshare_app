@@ -9,8 +9,7 @@ class QandasControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     get qandas_url
     assert_response :success

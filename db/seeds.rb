@@ -1,5 +1,5 @@
 User.create!(name:                  "Example User (=Admin user)",
-             email:                 "example@example.org",
+             email:                 "admin@example.org",
              phone:                 "1234567890",
              birthday:              "2000-01-01",
              description:           "write something interesting about you ;)",

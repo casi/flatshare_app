@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :qandas
   resources :listitems do
-    delete :index, on: :collection, action: :destroy_all
+    delete :index, on: :collection, action: :destroy
   end
 
   resources :users

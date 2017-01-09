@@ -13,8 +13,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     get users_path
     assert_response :success
@@ -27,17 +26,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
 =begin
   ## TODO: improve test coverage!!!
-  ## still produces error. don't find it yet :(
+  ## still produces a failure. don't find it yet :(
   test "should create user" do
     get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     assert_difference('User.count') do
       post users_url, params: { user: { name: @user2.name, 
                                         email: @user2.email,
-                                        password: @user2.password_digest,
-                                        password_confirmation: @user2.password_digest,
+                                        password: "password",
+                                        password_confirmation: "password",
                                         admin: @user2.admin } }
     end
 
@@ -45,8 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 =end
 
   test "should get edit" do
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     get edit_user_url(@user)
     assert_response :success
@@ -54,8 +51,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     patch user_url(@user), params: { user: { name: @user.name, 
                                         	   email: @user.email,
@@ -68,8 +64,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy user" do
     get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
+    log_in_as @user
 
     assert_difference('User.count', -1) do
       delete user_url(@user)

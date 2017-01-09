@@ -7,8 +7,8 @@
   </h2>
   <div class="col-md-6 col-md-offset-3 info">
 	<p><%= @info.user.name %></p>
-	Created: <%= l @info.created_at, format: :short %> |
-	Updated: <%= l @info.updated_at, format: :short %><br>
+	<small>Created: <%= l @info.created_at, format: :short %> |
+	Updated: <%= l @info.updated_at, format: :short %></small><br>
 	<p><%= simple_format(@info.content) %></p>
   </div>
 </div>

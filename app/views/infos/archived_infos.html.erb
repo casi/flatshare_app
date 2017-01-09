@@ -5,15 +5,15 @@
 	<div class="col-md-8 col-md-offset-2">
 		<% @infos.each do |info| %>
 		<div class="row info">
-			<div class="col-md-2 col-sm-2 col-xs-4">
+			<div class="col-md-2 col-sm-2 col-xs-3">
 				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? %><br>
 				<%= info.user ? info.user.name : "Deleted User" %><br>
 			</div>
-			<div class="col-md-9 col-sm-9 col-xs-8">
-				<span class="small"><%= info.created_at %></span>
+			<div class="col-md-10 col-sm-9 col-xs-9">
+				<span class="small"><%= l info.created_at, format: :short %></span>
 				<h3>
 					<%= link_to info.title, info_path(info) %>
-					<span class="small">(<%= info.comments.count %> comment(s))</span>
+					<span class="badge"><%= info.comments.count if info.comments.count > 0 %></span>
 				</h3>
 				<%= simple_format(info.content) %>
 			</div>
