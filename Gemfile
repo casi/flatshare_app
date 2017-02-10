@@ -33,6 +33,10 @@ group :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
+
+  # for code climate test coverage
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

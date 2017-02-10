@@ -7,7 +7,6 @@ class Admin::AdminController < ApplicationController
   	@users = User.all
     @infos_narch = Info.not_archived
     @infos_arch = Info.archived
-    #@archived_count = Info.archived.count
   end
 
   private

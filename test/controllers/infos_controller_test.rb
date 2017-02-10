@@ -46,13 +46,4 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to infos_url
   end
 
-  test "should destroy info" do
-    log_in_as @user
-    
-    assert_difference('Info.count', -1) do
-      delete info_url(@info)
-    end
-
-    assert_redirected_to infos_url
-  end
 end

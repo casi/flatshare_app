@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/casi/flatshare_app.svg?branch=master)](https://travis-ci.org/casi/flatshare_app)
+
+[![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
+
+[![Test Coverage](https://codeclimate.com/github/casi/flatshare_app/badges/coverage.svg)](https://codeclimate.com/github/casi/flatshare_app/coverage)
+
 # Flatshare app
 
 This small application (written with brand new **Rails 5**) lets members of a shared flat manage their shared flat related informations, contracts, house rules, cleaning rota, events etc. (at least that is the plan ;) )
@@ -8,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To start developing you need a running version of **Ruby (at least 2.3.0)** on your local machine.
+To start developing you need a running version of **Ruby (at least 2.3.1)** on your local machine.
 
 ### Installing
 
