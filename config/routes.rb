@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   end
 
   resources :users
+
+  get '/admin', to: 'admin/admin#index'
+  namespace :admin do
+    resources :users, :infos
+  end
 end

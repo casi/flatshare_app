@@ -9,7 +9,7 @@
       <div class="media-left">
         <div class="media-object">
           <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
-        </div>        
+        </div>
       </div>
       <div class="media-body">
         <h4 class="media-heading"><%= user.name %></h4>
@@ -20,12 +20,7 @@
         <%= "Moved out: #{user.moved_out}" if user.moved_out? %></br>
       </div>
       <p><%= "\"#{user.description}\"" if user.description? %></p>
-      <% if current_user.admin? %>
-        <%= link_to "edit", edit_user_path(user) %> |
-        <%= link_to "delete", user, method: :delete, 
-        data: { confirm: "Are you sure want to delete #{user.name}? Think about again!" } %>
-      <% end %>
-    </div><br>
+    </div>
   </div>
-  <% end %>  
-</div>  
+  <% end %>
+</div>

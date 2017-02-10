@@ -39,7 +39,7 @@
             				<li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
             				<li class="divider"></li>
             				<% if current_user.admin? %>
-            				  <li><a href="#">Admin</a></li>
+            				  <li><a href="/admin">Admin</a></li>
             				  <li class="divider"></li>
             				<% end %>
               				<li>

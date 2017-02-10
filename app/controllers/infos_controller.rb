@@ -1,5 +1,5 @@
 class InfosController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:index, :create, :destroy]
   before_action :set_info, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -42,13 +42,6 @@ class InfosController < ApplicationController
   def archived
     @infos = Info.archived
     render :archived_infos
-  end
-
-  def destroy
-    if @info.destroy
-      flash[:success] = 'Info deleted.'
-      redirect_to infos_url
-    end
   end
 
   private
