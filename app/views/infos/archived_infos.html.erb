@@ -6,7 +6,7 @@
 		<% @infos.each do |info| %>
 		<div class="row info">
 			<div class="col-md-2 col-sm-2 col-xs-3">
-				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? %><br>
+				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? if info.user %><br>
 				<%= info.user ? info.user.name : "Deleted User" %><br>
 			</div>
 			<div class="col-md-10 col-sm-9 col-xs-9">
@@ -20,5 +20,4 @@
 		</div>
 		<% end %>
 	</div>
-
 </div>

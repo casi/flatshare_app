@@ -6,198 +6,222 @@ $gray-medium-light: #eaeaea;
 $bg-color: #fafafa;
 
 @mixin box_sizing {
-	-moz-box-sizing:    border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing:         border-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  -moz-box-shadow:    $horizontal $vertical $blur $spread $color;
+  -ms-box-shadow:     $horizontal $vertical $blur $spread $color;
+  box-shadow:         $horizontal $vertical $blur $spread $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius:  $radius;
+  -moz-border-radius:     $radius;
+  -ms-border-radius:      $radius;
+  border-radius:          $radius;
 }
 
 /* universal ==========================*/
 body {
-	padding-top: 60px;
-	background-color: $bg-color;
+  padding-top: 60px;
+  background-color: $bg-color;
 }
 
 section {
-	overflow: auto;
+  overflow: auto;
 }
 
 textarea {
-	resize: vertical;
+  resize: vertical;
 }
 
 .img-responsive {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* typography ========================*/
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
+  line-height: 1;
 }
 
 h1 {
-	font-size: 3em;
-	letter-spacing: -2px;
-	margin-bottom: 30px;
-	text-align: center;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 h2 {
-	font-size: 2.0em;
-	letter-spacing: -1px;
-	margin-bottom: 30px;
-	text-align: center;
-	font-weight: normal;
-	color: $gray-light;
+  font-size: 2.0em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
 }
 
 h3 {
-	margin-top: 4px;
+  margin-top: 4px;
 }
 
 p {
-	font-size: 1.2em;
-	letter-spacing: 0.3px;
-	line-height: 1.5em;
-	font-weight: 300;
+  font-size: 1.2em;
+  letter-spacing: 0.3px;
+  line-height: 1.5em;
+  font-weight: 300;
 }
 
 /* header ===========================*/
 #logo {
-	float: left;
-	margin-right: 10px;
-	font-size: 1.7em;
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: -1px;
-	padding-top: 9px;
-	font-weight: bold;
-	&:hover {
-		color: #fff;
-		text-decoration: none;
-	}
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .alert {
-	font-size: 1.2em;
-	font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
+
+.navbar-nav {
+li {
+  a {
+    text-transform: uppercase; 
+  }
+}
+} 
 
 /* content ===========================*/
 #rules {
-	li {
-		font-size: 1.2em;
-		font-weight: 350;
-		letter-spacing: 0.3px;
-		line-height: 1.5em;
-	}
+  li {
+    font-size: 1.2em;
+    font-weight: 350;
+    letter-spacing: 0.3px;
+    line-height: 1.5em;
+  }
 }
 
 .info {
-	background-color: #fff;
-	margin-bottom: 10px;
-	padding: 10px 8px 2px;
-	border: solid 1px #efefef;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px 8px 2px;
+  border: solid 1px #efefef;
+  @include border-radius(4px);
+  @include box-shadow(0, 6px, 4px, -4px, $gray-medium-light);
 
-	.img-responsive {
-		margin-top: 2px;
-	}
+  .img-responsive {
+    margin-top: 2px;
+  }
 }
 
 .question, .list {
-	background-color: #fff;
-	margin-bottom: 10px;
-	padding: 10px 4px 12px 8px;
-	border: solid 1px #efefef;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px 4px 12px 8px;
+  border: solid 1px #efefef;
 
-	.small {
-		margin-right: 15px;
-	}
-	h4 {
-		margin: 5px 12px 12px;
-	}
-	p {
-		margin: 0 10px;
-	}
+  .small {
+    margin-right: 15px;
+  }
+  h4 {
+    margin: 5px 12px 12px;
+  }
+  p {
+    margin: 0 10px;
+  }
 }
 
 .panel {
-	h3 {
-		text-align: center;
-	}
-	.list-group-item {
-		font-size: 1.2em;
-	}
+  h3 {
+    text-align: center;
+  }
+  .list-group-item {
+    font-size: 1.2em;
+  }
 }
 
 .rota {
-	h3 {
-		font-size: 1.8em;
-		margin-top: 10px;
-		margin-bottom: 15px;
-		text-align: center;
-		font-weight: normal;
-		color: $gray-light;
-	}
-	.img-responsive {
-		margin-bottom: 25px;
-	}
+  h3 {
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: normal;
+    color: $gray-light;
+  }
+  .img-responsive {
+    margin-bottom: 25px;
+  }
 }
 
 .media-body {
-	font-size: 1em;
-	font-weight: 350;
-	letter-spacing: 0.3px;
-	line-height: 1.3em;
+  font-size: 1em;
+  font-weight: 350;
+  letter-spacing: 0.3px;
+  line-height: 1.3em;
 }
 
 /* footer ============================*/
 footer {
-	margin-top: 45px;
-	margin-bottom: 20px;
-	padding-top: 5px;
-	border-top: 1px solid $gray-medium-light;
-	color: $gray-light;
-	text-align: center;
-	a {
-		color: $gray;
-		&:hover {
-			color: $gray-darker;
-		}
-	}
+  margin-top: 45px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  text-align: center;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
 }
 
 /* forms =============================*/
 input, textarea, select, .uneditable-input {
-	border: 1px solid #bbb;
-	width: 100%;
-	margin-bottom: 15px;
-	@include box_sizing;
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
 }
 
 input {
-	height: auto !important;
+  height: auto !important;
 }
 
 #error_explanation {
-	color: red;
-	ul {
-		color: red;
-		margin: 0 0 30px 0;
-	}
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
 }
 
 .field_with_errors {
-	@extend .has-error;
-	.form-control {
-		color: $state-danger-text;
-	}
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
 /* miscellaneous =====================*/
 .debug_dump {
-	clear: both;
-	float: left;
-	width: 100%;
-	margin-top: 45px;
-	@include box_sizing;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }

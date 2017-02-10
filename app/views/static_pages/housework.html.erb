@@ -2,28 +2,31 @@
 <h1>Housework Rota</h1>
 <h2 class="lead">Our current housework rota (static version).</h2>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="heading">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="false" aria-controls="collapse">
-          Explanations (What should I do and when?)
-        </a>
-      </h4>
-    </div>
-    <div id="collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading">
-      <div class="panel-body">
-      	<p><b>Time slot</b> is every week from monday to sunday. Everyone is responsible for its cleaning area by themselves.</p>
-      	<p><b>Corridor:</b> Clean cupboard, vaccum-clean ground and after it with wood cleaner in warm water (not hot and not full watery). Also be responsible for any waste (organic, packing, other) and paper/paperboard in the kitchen. The glass waste and returnable bottles in the corridor should be taken away at least twice per month.</p>
-      	<p><b>Kitchen:</b> Clean all surfaces. Vacuum-clean and then with wet with ground cleaner. <span class="label label-danger">Important:</span> Everyone should take care of their mess after cooking/food preparing/eating.</p>
-      	<p><b>Bath:</b> Clean all surfaces wet, the bathtub and sink with bath cleaner. Vacuum-clean and then with wet with ground cleaner.</p>
+<div class="row rota">
+  <h3>Rota 2017</h3>
+  <%= image_tag("/images/housework_rota_2017.png", alt: "housework rota (static)", class: "img-responsive") %>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="false" aria-controls="collapse">
+              Explanations (What should I do and when?)
+            </a>
+          </h4>
+        </div>
+        <div id="collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading">
+          <div class="panel-body">
+            <p><b>Time slot</b> is every week from monday to sunday. Everyone is responsible for their cleaning area by themselves.</p>
+            <p><b>Corridor:</b> Clean cupboard, vaccum-clean ground and after it with wood cleaner in warm water (not hot and not full watery). Also be responsible for any waste (organic, packing, other) and paper/paperboard in the kitchen. The glass waste and returnable bottles in the corridor should be taken away at least twice a month.</p>
+            <p><b>Kitchen:</b> Clean all surfaces. Vacuum-clean and then with wet with ground cleaner. <span class="label label-danger">Important:</span> Everyone should take care of their mess after cooking/food preparing/eating.</p>
+            <p><b>Bath:</b> Clean all surfaces wet, the bathtub and sink with bath cleaner. Vacuum-clean and then with wet with ground cleaner.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="row rota">
-	<h3>Rota 2017</h3>
-	<%= image_tag("/images/housework_rota_2017.png", alt: "housework rota (static)", class: "img-responsive") %>
-</div>
-

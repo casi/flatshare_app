@@ -4,15 +4,26 @@
 </h2>
 
 <div class="row">
-	<% @qandas.each do |qanda| %>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2 question">
-			<h4><%= qanda.question %> <%= link_to edit_qanda_path(qanda) do %>
-  				<span class="glyphicon glyphicon-pencil"></span>
-  			<% end %>
-			</h4>
-			<%= qanda.answer? ? simple_format(qanda.answer) : "..." %>
-		</div>
-	</div>
-	<% end %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+    <% @qandas.each do |qanda| %>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading<%= qanda.id %>">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= qanda.id %>" aria-expanded="false" aria-controls="collapse<%= qanda.id %>">
+            <%= qanda.question %> <%= link_to edit_qanda_path(qanda) do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse<%= qanda.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= qanda.id %>">
+          <div class="panel-body">
+        <%= qanda.answer? ? simple_format(qanda.answer) : simple_format("...") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
 </div>
