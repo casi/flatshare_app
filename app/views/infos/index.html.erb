@@ -12,7 +12,7 @@
 		<div class="row info">
 			<div class="col-md-2 col-sm-2 col-xs-3">
 				<%= image_tag info.user.picture.url, class: 'img-rounded' if info.user.picture? if info.user %>
-				<%= info.user ? info.user.name : "Deleted User" %><br>
+				<%= info.user ? info.user.name : content_tag(:i, "Deleted User") %><br>
 				<%= link_to 'Edit', edit_info_path(info) %> |
 				<%= link_to 'to archive', info_path(info, "info[archived]" => true), method: :put %>
 			</div>
@@ -36,7 +36,7 @@
 		</div>
 		<div class="col-md-12 col-sm-6 col-xs-6">
 			<p>BVG-Info<br>(Public Transport System in Berlin)</p>
-			<iframe src="http://www.bvg.de/bvgapi/WebWidgets/fahrinfo.html?c=1&w=300&t=6&f=" width="280" height="400" name="iFrame">
+			<iframe src="http://www.bvg.de/bvgapi/WebWidgets/fahrinfo.html?c=3&w=280&t=1&f=" width="280" height="400" name="iFrame">
 				<p>Wir setzen auf Frames zur Anzeige von externen Inhalten. Wir sind leider nicht in der Lage, andere Möglichkeiten zu nutzen. Sie können die eingebettete Funktion hier nutzen: <a href="http://fahrinfo.bvg.de/Fahrinfo/bin/">Fahrinfo der BVG</a></p>
 			</iframe>
 		</div>
