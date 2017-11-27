@@ -1,3 +1,11 @@
+# default user 
+User.create!(id:                    0,
+             name:                  "Deleted User",
+             email:                 "default@example.org",
+             password:              "password",
+             password_confirmation: "password",
+             admin:                 false)
+
 User.create!(name:                  "Example User (=Admin user)",
              email:                 "admin@example.org",
              phone:                 "1234567890",
@@ -20,8 +28,8 @@ Listitem.create!(item: "no items yet",
                    done:         false) 
 end
 
-#2 dummy users
-2.times do |n|
+#5 dummy users
+5.times do |n|
   name                  = Faker::Name.name
   email                 = Faker::Internet.email
   phone                 = Faker::PhoneNumber.cell_phone
@@ -39,8 +47,8 @@ end
                admin: false)
 end
 
-#10 dummy news
-10.times do |n|
+#20 dummy news
+20.times do |n|
   user_id     = rand(1..3)
   title       = Faker::Lorem.sentence
   content     = Faker::Lorem.paragraph
@@ -48,4 +56,4 @@ end
                title:  title,
                content: content,
                archived: false)
- end
+end
