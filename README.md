@@ -1,10 +1,7 @@
-[![Build Status](https://travis-ci.org/casi/flatshare_app.svg?branch=master)](https://travis-ci.org/casi/flatshare_app)
-
-[![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
-
-[![Test Coverage](https://codeclimate.com/github/casi/flatshare_app/badges/coverage.svg)](https://codeclimate.com/github/casi/flatshare_app/coverage)
-
 # Flatshare app
+[![Build Status](https://travis-ci.org/casi/flatshare_app.svg?branch=master)](https://travis-ci.org/casi/flatshare_app)
+[![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
+[![Test Coverage](https://codeclimate.com/github/casi/flatshare_app/badges/coverage.svg)](https://codeclimate.com/github/casi/flatshare_app/coverage)
 
 This small application (written with brand new **Rails 5**) lets members of a shared flat manage their shared flat related informations, contracts, house rules, cleaning rota, events etc. (at least that is the plan ;) )
 
@@ -54,18 +51,14 @@ This project is a work of and maintained by Carsten Behnert. Looking for some ot
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### TODO:
+### TODOs
 v1.0: 
 
-- [x] News Archive 
-- [x] News comments
-- [X] Questions & Answers
-- [X] Lists (Shopping)
-- [X] Session Handling & Basic Authentication
-- [ ] Cashpoint Manager 
-- [ ] Housework Rota (dynamic)
+- [ ] Basic Admin Interface 
 - [ ] Full Test Coverage (!!!)
 
 v1.1:
 
+- [ ] Cashpoint Manager 
+- [ ] Housework Rota (dynamic)
 - [ ] Calendar (Events etc)
