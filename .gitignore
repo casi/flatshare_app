@@ -29,3 +29,7 @@
 
 # Ignore all passenger related files
 passenger*
+
+# avoid issues because of codeclimate generated stuff
+/coverage/*
+coverage
