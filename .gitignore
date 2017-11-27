@@ -33,3 +33,4 @@ passenger*
 # avoid issues because of codeclimate generated stuff
 /coverage/*
 coverage
+vendor/bundle
