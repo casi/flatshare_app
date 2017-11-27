@@ -4,7 +4,7 @@ class User < ApplicationRecord
   
   before_save { email.downcase! }
 
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { where("id > 0").order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
 
   validates :name, presence: true, length: { maximum: 50}
