@@ -17,7 +17,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user = User.find(params[:id])
+
+    @infos_from_user = Info.where(user_id: @user.id)
+    @infos_from_user.each do |info|
+      info.update_attribute(:user_id, 0)
+    end
+
+    @user.destroy
     flash[:success] = "User deleted"
     redirect_to admin_url
   end
