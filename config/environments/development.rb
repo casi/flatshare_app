@@ -42,6 +42,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # CB: local precompilation
+  config.assets.prefix = "/dev-assets"
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

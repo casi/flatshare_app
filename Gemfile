@@ -10,13 +10,15 @@ gem 'bootstrap-sass'
 gem 'passenger',      '>= 5.1', require: 'phusion_passenger/rack_handler'
 gem 'sqlite3'
 gem 'sass-rails',     '~>5.0.6'
-gem 'uglifier',       '>= 3.0'
-gem 'coffee-rails',   '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks',     '~> 5'
 gem 'jbuilder',       '~> 2.6'
 
 group :development, :test do
+  # BEGIN: copied from :default scope because we pre-compile in prod
+  gem 'uglifier',       '>= 3.0'
+  gem 'coffee-rails',   '~> 4.2'
+  # END: copied from :default scope because we pre-compile in prod
   gem 'awesome_print'
   gem 'byebug', platform: :mri
 end
