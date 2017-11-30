@@ -6,7 +6,7 @@ volumes:
 services:
 
   app:
-    image: casi/app-fs:latest
+    image: casi257/app-fs:latest
     volumes:
       - app-db:/data
     env_file: .env
