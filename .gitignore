@@ -34,3 +34,5 @@ passenger*
 /coverage/*
 coverage
 vendor/bundle
+public/assets
+coverage
