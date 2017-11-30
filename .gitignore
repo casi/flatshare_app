@@ -36,3 +36,4 @@ coverage
 vendor/bundle
 public/assets
 coverage
+.env

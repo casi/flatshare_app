@@ -4,21 +4,12 @@ volumes:
   app-db:
 
 services:
-  bundler:
-    image: casi/app-fs:1.0-dev
-    volumes:
-      - ./:/app:delegated
 
   app:
-    image: casi/app-fs:1.0-dev
+    image: casi/app-fs:latest
     volumes:
-      - ./:/var/www/app:cached
       - app-db:/data
-    ports:
-      - 3000:8080
-    environment:
-      - SECRET_KEY_BASE=Abbuzze!
-      - RAILS_LOG_TO_STDOUT=1
+    env_file: .env
     working_dir: /var/www/app
     entrypoint: ["/usr/local/bin/entrypoint.sh"]
     command: ["apache2ctl", "-DFOREGROUND", "-DNO_DETACH"]
