@@ -1,0 +1,17 @@
+.bundle
+coverage
+db/*.sqlite3
+docker
+log/*.log
+public/assets
+public/uploads
+tmp
+vendor
+.codeclimate.yml
+.env
+.env.dist
+.travis.yml
+docker-compose*
+Dockerfile
+LICENSE.md
+README.md

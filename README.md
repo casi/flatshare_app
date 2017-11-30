@@ -18,6 +18,7 @@ To start developing you need a running version of **Ruby (at least 2.3.1)** on y
 After cloning this repository run:
 
 ```
+cp .env.dist .env
 bundle install
 ```
 do the database setup (migrate and seed)
@@ -42,6 +43,15 @@ rails test
 ## Deployment
 
 For a deployment example please read [devcenter on heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku) for installing on the popular Rails hoster or the respective manuals from your Rails hosting provider.
+
+### (WIP) Steps
+
+  - `git checkout` the branch / tag you want to deploy
+  - build image `docker build --tag casi/app-fs:latest .`
+  - push image to registry `docker push casi/app-fs:latest`
+  - create `.env` for production use
+  - upload `docker-compose.yml` and `docker-compose.prod.yml`
+  - run `docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d`
 
 ## Authors
 
