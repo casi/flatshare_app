@@ -1,25 +1,4 @@
-# default user 
-User.create!(id:                    0,
-             name:                  "Deleted User",
-             email:                 "default@example.org",
-             password:              "password",
-             password_confirmation: "password",
-             admin:                 false)
-
-User.create!(name:                  "Example User (=Admin user)",
-             email:                 "admin@example.org",
-             phone:                 "1234567890",
-             birthday:              "2000-01-01",
-             description:           "write something interesting about you ;)",
-             password:              "password",
-             password_confirmation: "password",
-             admin:                 true)
-
-Listitem.create!(item: "no items yet",
-                 done: false
-)
-
-# just for testing purposes ==================================
+# data sets, just for testing purposes
 
 #10 dummy shoppinglist items
 10.times do |n|
