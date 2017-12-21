@@ -8,9 +8,5 @@ class CreateListitems < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-
-    Listitem.create!(item: "no items yet",
-                     done: false
-    )
   end
 end
