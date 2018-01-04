@@ -2,6 +2,9 @@
 *~
 .DS_Store
 
+# Ignore IDE related stuff
+.idea/
+
 # Ignore bundler config.
 /.bundle
 
