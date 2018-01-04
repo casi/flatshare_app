@@ -7,7 +7,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   end
 
   test "full title helper" do
-  	assert_equal full_title, "Flatshare App"
+  	assert_equal full_title(""), "Flatshare App"
   	assert_equal full_title("Rules"), "Rules | Flatshare App"
   end
 
@@ -24,6 +24,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_template 'layouts/_footer'
     assert_template 'layouts/application'
 
+    assert_select "a[href=?]", infos_path
+    assert_select "a[href=?]", housework_path
     assert_select "a[href=?]", rules_path
     assert_select "a[href=?]", users_path
 

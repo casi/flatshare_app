@@ -1,4 +1,4 @@
-carsten: 
+carsten:
   id: 1
   name: Carsten Behnert
   email: example@example.org
@@ -6,7 +6,6 @@ carsten:
   admin: true
 
 tina:
-  id: 2
   name: Tina Spackowski
   email: geile@tina.org
   password_digest: <%= User.digest('password') %>

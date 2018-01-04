@@ -33,6 +33,11 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to infos_url
   end
 
+  test "should show info" do
+    get info_url(@info)
+    assert_response :success
+  end
+
   test "should get edit" do
     get edit_info_url(@info)
     assert_response :success
@@ -46,4 +51,17 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to infos_url
   end
 
+  test "should set info as archived" do
+    get infos_url
+    patch info_url(@info), params: {info: { archived: true }}
+    assert_redirected_to infos_url
+  end
+
+  test "should get index of archived infos" do
+    get login_path
+    log_in_as @user
+    
+    get archived_infos_url
+    assert_response :success
+  end
 end

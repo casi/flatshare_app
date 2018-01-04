@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user  = users(:carsten)
+    @user = users(:carsten)
     @user2 = users(:tina)
   end
 
@@ -28,18 +28,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   ## TODO: improve test coverage!!!
   ## still produces a failure. don't find it yet :(
   test "should create user" do
-    get login_path
-    log_in_as @user
-
     assert_difference('User.count') do
-      post users_url, params: { user: { name: @user2.name, 
+      post users_url, params: { user: { name: @user2.name,
                                         email: @user2.email,
                                         password: "password",
-                                        password_confirmation: "password",
-                                        admin: @user2.admin } }
+                                        password_confirmation: "password"
+      }}
     end
 
-    assert_redirected_to users_url
+    assert_redirected_to users_path
 =end
 
   test "should get edit" do
@@ -50,14 +47,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    get login_path
-    log_in_as @user
+    #get login_path
+    #log_in_as @user
 
-    patch user_url(@user), params: { user: { name: @user.name, 
-                                        	   email: @user.email,
-                                        	   password: "password",
-                                        	   password_confirmation: "password",
-                                        	   admin: @user.admin } }
+    patch user_url(@user), params: { user: { name: @user.name,
+                                            email: @user.email,
+                                            password: "password",
+                                            password_confirmation: "password",
+                                            admin: @user.admin
+    }}
 
     assert_redirected_to edit_user_path
   end

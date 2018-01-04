@@ -16,6 +16,19 @@ class ListitemsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should create item" do
+    get login_path
+    log_in_as @user
+
+    assert_difference('Listitem.count') do
+      post listitems_url, params: { listitem: { item: @listitem1.item,
+                                                done: @listitem1.done
+      } }
+    end
+
+    assert_redirected_to listitems_url
+  end
+
   test "should get update" do
     get login_path
     log_in_as @user
