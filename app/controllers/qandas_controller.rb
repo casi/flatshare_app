@@ -5,10 +5,6 @@ class QandasController < ApplicationController
     @qandas = Qanda.all
   end
 
-  def show
-    @qanda = Qanda.find(params[:id])
-  end
-
   def new
     @qanda = Qanda.new
   end

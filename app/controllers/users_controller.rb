@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   before_action :logged_in_user, only: [:index, :edit]
-  before_action :admin_user, only: [:destroy]
 
   def index
     @users = User.all
@@ -18,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Flatshare App!"
+      flash[:success] = "User #{@user.name} created!"
       redirect_to users_url
     else
       render :new
@@ -37,24 +36,24 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :phone, :birthday, 
-                                   :moved_in, :moved_out,
-                                   :description, :password,
-                                   :password_confirmation, :picture)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :phone, :birthday,
+                                 :moved_in, :moved_out,
+                                 :description, :password,
+                                 :password_confirmation, :picture)
+  end
 
-    # Before filters
+  # Before filters
 
-    # Confirms the correct user.
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-    # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+  # Confirms an admin user.
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
 end
