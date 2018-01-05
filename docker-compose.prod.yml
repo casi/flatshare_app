@@ -6,7 +6,5 @@ volumes:
 services:
 
   app:
-    ports:
-      - 80:8080
     volumes:
       - app-uploads:/var/www/app/public/uploads
