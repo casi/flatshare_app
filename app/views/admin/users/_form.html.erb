@@ -1,74 +1,74 @@
-<%= form_for([:admin, @user], html: {multipart: true}) do |f| %>
+<%= form_for([:admin, @user], html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="row">
-    <div class="col-md-6 col-sm-6 form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control', placeholder: "firstname is enough" %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :phone %>
-        <%= f.telephone_field :phone, class: 'form-control' %>
-      </div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "firstname is enough" %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.telephone_field :phone, class: 'form-control' %>
+    </div>
+  </div>
 
-    <div class="col-md-6 col-sm-6">
-      <%= f.label :picture %>
-      <span class="picture">
+  <div class="col-md-6 col-sm-6">
+    <%= f.label :picture %>
+    <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
-      <%= image_tag @user.picture.url, class: 'img-rounded' if @user.picture? %>
-    </div>
+    <%= image_tag @user.picture.url, class: 'img-rounded' if @user.picture? %>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-4 col-sm-4 form-group">
-      <%= f.label :birthday %>
-      <%= f.text_field :birthday, class: 'form-control',
-                       placeholder: "yyyy-mm-dd or dd.mm.yyyy ...for b-day present? ;)" %>
-    </div>
-    <div class="col-md-4 col-sm-4 form-group">
-      <%= f.label :moved_in %>
-      <%= f.text_field :moved_in, class: 'form-control' %>
-    </div>
-    <div class="col-md-4 col-sm-4 form-group">
-      <%= f.label :moved_out %>
-      <%= f.text_field :moved_out, class: 'form-control' %>
-    </div>
+<div class="row">
+  <div class="col-md-4 col-sm-4 form-group">
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday, class: 'form-control', 
+                      placeholder: "yyyy-mm-dd or dd.mm.yyyy ...for b-day present? ;)" %>
   </div>
-
-  <div class="row">
-    <div class="col-md-12 col-sm-12 form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control', size: '10x6',
-                      placeholder: "Say something short about you..." %>
-    </div>
+  <div class="col-md-4 col-sm-4 form-group">
+    <%= f.label :moved_in %>
+    <%= f.text_field :moved_in, class: 'form-control' %>
   </div>
-
-  <div class="row">
-    <div class="col-md-6 col-sm-6 form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    <div class="col-md-6 col-sm-6 form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
+  <div class="col-md-4 col-sm-4 form-group">
+    <%= f.label :moved_out %>
+    <%= f.text_field :moved_out, class: 'form-control' %>
   </div>
+</div>
 
-  <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+<div class="row">
+  <div class="col-md-12 col-sm-12 form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control', size: '10x6',
+                    placeholder: "Say something short about you..." %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-6 form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="col-md-6 col-sm-6 form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+</div>
+
+<%= f.submit yield(:button_text), class: 'btn btn-primary' %>
 <% end %>
 <br>
 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= link_to 'Back', admin_path %>
 
 <script type="text/javascript">
-    $('#user_picture').bind('change', function () {
-        var size_in_megabytes = this.files[0].size / 1024 / 1024;
-        if (size_in_megabytes > 5) {
-            alert('Maximum file size is 5MB. Please choose a smaller file.');
-        }
-    });
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
 </script>

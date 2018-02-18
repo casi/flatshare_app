@@ -1,11 +1,11 @@
 <%= form_for([@info, @info.comments.build]) do |f| %>
-  <div class="form-group">
-    <%= f.label :comment %>
-    <%= f.text_area :body, size: '20x10', class: 'form-control' %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Save', class: 'btn btn-primary' %>
-  </div>
+	<div class="form-group">
+		<%= f.label :comment %>
+		<%= f.text_area :body, size: '20x10', class: 'form-control' %>
+	</div>
+	<div class="actions">
+		<%= f.submit 'Save', class: 'btn btn-primary' %>
+	</div>
 <% end %>
 
 <br>

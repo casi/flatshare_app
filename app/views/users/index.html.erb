@@ -4,23 +4,23 @@
 
 <div class="row">
   <% @users.each do |user| %>
-    <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="media info">
-        <div class="media-left">
-          <div class="media-object">
-            <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
-          </div>
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="media info">
+      <div class="media-left">
+        <div class="media-object">
+          <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
         </div>
-        <div class="media-body">
-          <h4 class="media-heading"><%= user.name %></h4>
-          <%= user.email if user.email? %><br>
-          <%= "Phone: #{user.phone}" if user.phone? %><br>
-          <%= "Birthday: #{user.birthday.to_s}" if user.birthday? %><br>
-          <%= "Moved in: #{user.moved_in}" if user.moved_in? %><br>
-          <%= "Moved out: #{user.moved_out}" if user.moved_out? %><br>
-        </div>
-        <p><%= "\"#{user.description}\"" if user.description? %></p>
       </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= user.name %></h4>
+        <%= user.email if user.email? %></br>
+        <%= "Phone: #{user.phone}" if user.phone? %></br>
+        <%= "Birthday: #{user.birthday.to_s}" if user.birthday? %></br>
+        <%= "Moved in: #{user.moved_in}" if user.moved_in? %></br>
+        <%= "Moved out: #{user.moved_out}" if user.moved_out? %></br>
+      </div>
+      <p><%= "\"#{user.description}\"" if user.description? %></p>
     </div>
+  </div>
   <% end %>
 </div>

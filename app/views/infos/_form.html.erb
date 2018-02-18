@@ -1,21 +1,21 @@
 <%= form_for @info do |f| %>
-  <%= render 'shared/error_messages', object: @info %>
+<%= render 'shared/error_messages', object: @info %>
 
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control',
-                     placeholder: 'concise title which describes content the best' %>
-  </div>
+<div class="form-group">
+	<%= f.label :title %>
+	<%= f.text_field :title, class: 'form-control',
+	placeholder: 'concise title which describes content the best' %>
+</div>
 
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, size: '10x10', class: 'form-control',
-                    placeholder: 'something new or flatshare related stuff...' %>
-  </div>
+<div class="form-group">
+	<%= f.label :content %>
+	<%= f.text_area :content, size: '10x10', class: 'form-control',
+	placeholder: 'something new or flatshare related stuff...' %>
+</div>
 
-  <div class="actions">
-    <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
-  </div>
+<div class="actions">
+	<%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+</div>
 <% end %>
 
 <br>
