@@ -13,9 +13,9 @@
             <td><%= user.name %></td>
             <td><%= link_to "edit", edit_admin_user_path(user) %></td>
             <td><%= link_to "delete", [:admin, user], method: :delete,
-                data: { confirm: "Are you sure want to delete #{user.name}? Think about again!" } %></td>
+                            data: {confirm: "Are you sure want to delete #{user.name}? Think about again!"} %></td>
           </tr>
-          <% end %>
+        <% end %>
         </tbody>
       </table>
     </div>
@@ -28,29 +28,29 @@
       <div class="panel-heading">Infos | #<%= @infos_narch.count + @infos_arch.count %></div>
       <table class="table table-hover">
         <tbody>
-          <tr>
-            <td colspan="4"><h5>not archived infos (<%= @infos_narch.count %>)</h5></td>
-          </tr>
+        <tr>
+          <td colspan="4"><h5>not archived infos (<%= @infos_narch.count %>)</h5></td>
+        </tr>
         <% @infos_narch.each do |info| %>
           <tr>
             <td><%= l info.created_at, format: :short %></td>
             <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
 
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
-                data: { confirm: "Are you sure want to delete #{info.title}?" } %></td>
+            <td><%= link_to "delete", [:admin, info], method: :delete,
+                            data: {confirm: "Are you sure want to delete #{info.title}?"} %></td>
           </tr>
         <% end %>
-          <tr>
-            <td colspan="4"><h5>archived infos (<%= @infos_arch.count %>)</h5></td>
-          </tr>        
+        <tr>
+          <td colspan="4"><h5>archived infos (<%= @infos_arch.count %>)</h5></td>
+        </tr>
         <% @infos_arch.each do |info| %>
           <tr>
             <td><%= l info.created_at, format: :short %></td>
             <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
-                data: { confirm: "Are you sure want to delete #{info.title}?" } %></td>
+            <td><%= link_to "delete", [:admin, info], method: :delete,
+                            data: {confirm: "Are you sure want to delete #{info.title}?"} %></td>
           </tr>
         <% end %>
 

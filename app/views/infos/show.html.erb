@@ -1,28 +1,29 @@
 <% provide(:title, 'Info') %>
 <div class="row">
-  <h2><%= @info.title %> 
-  	<%= link_to edit_info_path(@info) do %>
-  		<span class="glyphicon glyphicon-pencil"></span>
-  	<% end %>
+  <h2><%= @info.title %>
+    <%= link_to edit_info_path(@info) do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
   </h2>
   <div class="col-md-8 col-md-offset-2 info">
-	<p><%= @info.user ? @info.user.name : "Deleted User" %></p>
-	<small>Created: <%= l @info.created_at, format: :short %> |
-	Updated: <%= l @info.updated_at, format: :short %></small><br>
-	<p><%= simple_format(@info.content) %></p>
+    <p><%= @info.user ? @info.user.name : "Deleted User" %></p>
+    <small>Created: <%= l @info.created_at, format: :short %> |
+      Updated: <%= l @info.updated_at, format: :short %></small>
+    <br>
+    <p><%= simple_format(@info.content) %></p>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2 info">
-  	<h4>Comments</h4>
-	<%= render @info.comments %>
+    <h4>Comments</h4>
+    <%= render @info.comments %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-	<%= render 'comments/form' %>
-  	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <%= link_to 'Back', infos_path %>
+    <%= render 'comments/form' %>
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <%= link_to 'Back', infos_path %>
   </div>
 </div>

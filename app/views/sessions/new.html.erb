@@ -5,19 +5,20 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>	
-    </div>
-      
-	<div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>	
-    </div>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
     <br>
-    <p class="text-center small">If you don't have an account for the Flatshare App please ask the site admin to do that for you.</p>
+    <p class="text-center small">If you don't have an account for the Flatshare App please ask the site admin to do that
+      for you.</p>
   </div>
 </div>

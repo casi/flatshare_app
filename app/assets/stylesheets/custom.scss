@@ -1,34 +1,38 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
-/* mixins, variables, etc. =============*/
+// mixins, variables, etc. =============
 $gray-medium-light: #eaeaea;
 $bg-color: #fafafa;
+$border-color: #efefef;
+$border-formfields: #bbb;
+$error-red: #f00;
+$white: #fff;
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
+@mixin box-sizing {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
   -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
-  -moz-box-shadow:    $horizontal $vertical $blur $spread $color;
-  -ms-box-shadow:     $horizontal $vertical $blur $spread $color;
-  box-shadow:         $horizontal $vertical $blur $spread $color;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+  -ms-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow: $horizontal $vertical $blur $spread $color;
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius:  $radius;
-  -moz-border-radius:     $radius;
-  -ms-border-radius:      $radius;
-  border-radius:          $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 }
 
-/* universal ==========================*/
+// universal ==========================
 body {
-  padding-top: 60px;
   background-color: $bg-color;
+  padding-top: 60px;
 }
 
 section {
@@ -43,8 +47,13 @@ textarea {
   margin: 0 auto;
 }
 
-/* typography ========================*/
-h1, h2, h3, h4, h5, h6 {
+// typography ========================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1;
 }
 
@@ -56,12 +65,12 @@ h1 {
 }
 
 h2 {
-  font-size: 2.0em;
+  color: $gray-light;
+  font-size: 2em;
+  font-weight: normal;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
-  color: $gray-light;
 }
 
 h3 {
@@ -70,23 +79,24 @@ h3 {
 
 p {
   font-size: 1.2em;
-  letter-spacing: 0.3px;
-  line-height: 1.5em;
   font-weight: 300;
+  letter-spacing: .3px;
+  line-height: 1.5em;
 }
 
-/* header ===========================*/
+// header ===========================
 #logo {
+  color: $white;
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
+
   &:hover {
-    color: #fff;
+    color: $white;
     text-decoration: none;
   }
 }
@@ -97,48 +107,52 @@ p {
 }
 
 .navbar-nav {
-li {
-  a {
-    text-transform: uppercase; 
+  li {
+    a {
+      text-transform: uppercase;
+    }
   }
 }
-} 
 
-/* content ===========================*/
+// content ===========================
 #rules {
   li {
     font-size: 1.2em;
-    font-weight: 350;
-    letter-spacing: 0.3px;
+    font-weight: 300;
+    letter-spacing: .3px;
     line-height: 1.5em;
   }
 }
 
 .info {
-  background-color: #fff;
-  margin-bottom: 10px;
-  padding: 10px 8px 2px;
-  border: solid 1px #efefef;
   @include border-radius(4px);
   @include box-shadow(0, 6px, 4px, -4px, $gray-medium-light);
+
+  background-color: $white;
+  border: solid 1px $border-color;
+  margin-bottom: 10px;
+  padding: 10px 8px 2px;
 
   .img-responsive {
     margin-top: 2px;
   }
 }
 
-.question, .list {
-  background-color: #fff;
+.question,
+.list {
+  background-color: $white;
+  border: solid 1px $border-color;
   margin-bottom: 10px;
   padding: 10px 4px 12px 8px;
-  border: solid 1px #efefef;
 
   .small {
     margin-right: 15px;
   }
+
   h4 {
     margin: 5px 12px 12px;
   }
+
   p {
     margin: 0 10px;
   }
@@ -148,25 +162,28 @@ li {
   h3 {
     text-align: center;
   }
+
   .list-group-item {
     font-size: 1.2em;
   }
 }
+
 .panel-heading {
   font-weight: bold;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .rota {
   h3 {
-    font-size: 1.8em;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    text-align: center;
-    font-weight: normal;
     color: $gray-light;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    text-align: center;
   }
+
   .img-responsive {
     margin-bottom: 25px;
   }
@@ -174,59 +191,67 @@ li {
 
 .media-body {
   font-size: 1em;
-  font-weight: 350;
-  letter-spacing: 0.3px;
+  font-weight: 300;
+  letter-spacing: .3px;
   line-height: 1.3em;
 }
 
-/* footer ============================*/
+// footer ============================
 footer {
-  margin-top: 45px;
-  margin-bottom: 20px;
-  padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  margin-bottom: 20px;
+  margin-top: 45px;
+  padding-top: 5px;
   text-align: center;
+
   a {
     color: $gray;
+
     &:hover {
       color: $gray-darker;
     }
   }
 }
 
-/* forms =============================*/
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
+// forms =============================
+input,
+textarea,
+select,
+.uneditable-input {
+  @include box-sizing;
+  border: 1px solid $border-formfields;
   margin-bottom: 15px;
-  @include box_sizing;
+  width: 100%;
 }
 
 input {
   height: auto !important;
 }
 
-#error_explanation {
-  color: red;
+#error-explanation {
+  color: $error-red;
+
   ul {
-    color: red;
-    margin: 0 0 30px 0;
+    color: $error-red;
+    margin: 0 0 30px;
   }
 }
 
 .field_with_errors {
   @extend .has-error;
+
   .form-control {
     color: $state-danger-text;
   }
 }
 
-/* miscellaneous =====================*/
+// miscellaneous =====================
 .debug_dump {
+  @include box-sizing;
+
   clear: both;
   float: left;
-  width: 100%;
   margin-top: 45px;
-  @include box_sizing;
+  width: 100%;
 }
