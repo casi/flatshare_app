@@ -1,7 +1,7 @@
 class Admin::AdminController < ApplicationController
   
-  before_action :logged_in_user, only: [:index, :edit]
-  before_action :admin_user, only: [:index, :destroy]
+  before_action :logged_in_user, only: [:index]
+  before_action :admin_user, only: [:index]
 
   def index
   	@users = User.all
@@ -10,9 +10,7 @@ class Admin::AdminController < ApplicationController
   end
 
   private
-  
     # Before filter
-
     # Confirms an admin user.
     def admin_user
       redirect_to(root_url) unless current_user.admin?

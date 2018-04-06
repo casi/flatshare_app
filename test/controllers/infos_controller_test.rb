@@ -20,6 +20,18 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get new if inputs are wrong" do
+    get new_info_url
+    assert_no_difference('Info.count') do
+      post infos_url, params: { info: { user_id: 1,
+                                       title: '',
+                                       content: '',
+                                       archived: false }}
+    end
+    get new_info_url
+    assert_response :success
+  end
+
   test "should create info" do
     log_in_as @user
 

@@ -21,8 +21,6 @@ class ListitemsController < ApplicationController
     
     if @shopping_item.update(list_params)
       redirect_to listitems_url
-    else
-      render :edit
     end
   end
 

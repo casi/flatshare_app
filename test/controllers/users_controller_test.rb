@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:carsten)
     @user2 = users(:tina)
+    ##@user3 = users(:sarah)
   end
 
   test "should redirect index when not logged in" do
@@ -14,47 +15,39 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     log_in_as @user
-
     get users_path
     assert_response :success
   end
 
-  test "should get new" do
-    get new_user_url
-    assert_response :success
-  end
+  test 'should create new user' do
+    log_in_as @user
+    get new_user_path
 
-=begin
-  ## TODO: improve test coverage!!!
-  ## still produces a failure. don't find it yet :(
-  test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { name: @user2.name,
-                                        email: @user2.email,
-                                        password: "password",
-                                        password_confirmation: "password"
-      }}
+      post users_url, params: { user: { name: 'Sarah B.',
+                                        email: 'sarah.bpunkt@example.org',
+                                        password: '654321',
+                                        password_confirmation: '654321',
+                                        admin: false }}
     end
-
     assert_redirected_to users_path
-=end
+  end
 
   test "should get edit" do
     log_in_as @user
-
     get edit_user_url(@user)
     assert_response :success
   end
 
   test "should update user" do
     #get login_path
-    #log_in_as @user
+    log_in_as @user2
 
-    patch user_url(@user), params: { user: { name: @user.name,
-                                            email: @user.email,
+    patch user_url(@user2), params: {user: {name: @user2.name,
+                                            email: @user2.email,
                                             password: "password",
                                             password_confirmation: "password",
-                                            admin: @user.admin
+                                            admin: @user2.admin
     }}
 
     assert_redirected_to edit_user_path

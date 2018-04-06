@@ -1,6 +1,6 @@
 class InfosController < ApplicationController
-  before_action :logged_in_user, only: [:index, :create, :destroy]
-  before_action :set_info, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :create]
+  before_action :set_info, only: [:show, :edit, :update]
 
   def index
     @infos = Info.not_archived

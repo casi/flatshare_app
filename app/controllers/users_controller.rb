@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :logged_in_user, only: [:index, :edit]
 
   def index
@@ -43,6 +42,7 @@ class UsersController < ApplicationController
                                  :password_confirmation, :picture)
   end
 
+=begin
   # Before filters
 
   # Confirms the correct user.
@@ -54,6 +54,6 @@ class UsersController < ApplicationController
   # Confirms an admin user.
   def admin_user
     redirect_to(root_url) unless current_user.admin?
-  end
+=end
 
 end
