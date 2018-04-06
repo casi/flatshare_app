@@ -1,10 +1,11 @@
 FROM casi/ruby:2.3.3
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-	&& apt-get install apache2 imagemagick libapache2-mod-passenger -y \
+	&& apt-get install --no-install-recommends apache2 imagemagick libapache2-mod-passenger -y \
 	&& a2enmod passenger \
 	&& a2dissite 000-default \
-	&& mkdir -p /var/www/app
+	&& mkdir -p /var/www/app \
+	&& rm -rf /var/lib/apt/lists/*
 
 ADD rootfs/ /
 
