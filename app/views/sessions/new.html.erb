@@ -1,23 +1,18 @@
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>	
-    </div>
-      
-	<div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>	
-    </div>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <br>
-    <p class="text-center small">If you don't have an account for the Flatshare App please ask the site admin to do that for you.</p>
+<%= form_for(:session, url: login_path, html: {class: 'form-signin'}) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
   </div>
-</div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="btn-group">
+    <%= f.submit "Log in", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<p class="text-center">If you don't have an account please ask a flatmate to create it for you.</p>

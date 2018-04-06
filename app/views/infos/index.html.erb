@@ -1,7 +1,12 @@
 <% provide(:title, 'Infos/News') %>
 <h1>Infos & News</h1>
-<h2><span class="lead">What's new in our shared flat community? <br>Write a new <%= link_to 'Info/News', new_info_path %></span><br>
-	<span class="small"><%= link_to 'Archived Infos/News', archived_infos_path %>
+<h2><span class="lead">What's new in our shared flat community?</span><br>
+    <div class="btn-group">
+      <%= submit_tag '+ Info/News', type: 'button',
+                     onclick: "location.href = '#{ new_info_path }'",
+                     class: 'btn btn-success' %>
+    </div><br>
+	<span class="small"><%= link_to 'Show Infos/News-Archive', archived_infos_path %>
 		(<%= @archived_count %>)</span>
 </h2>
 

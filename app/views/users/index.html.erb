@@ -1,6 +1,12 @@
 <% provide(:title, 'Flatmates') %>
-<h1>Who actually lives in this flat?</h1>
-<h2><span class="lead">All Flatmates (<%= link_to "new flatmate", new_user_path %>)</span></h2>
+<h1>All Flatmates</h1>
+<h2><span class="lead">Who actually lives in this flat?</span><br>
+  <div class="btn-group">
+    <%= submit_tag '+ Flatmate', type: 'button',
+                   onclick: "location.href = '#{ new_user_path }'",
+                   class: 'btn btn-success' %>
+  </div>
+</h2>
 
 <div class="row">
   <% @users.each do |user| %>
@@ -13,7 +19,7 @@
       </div>
       <div class="media-body">
         <h4 class="media-heading"><%= user.name %></h4>
-        <%= user.email if user.email? %></br>
+        <%= user.email %></br>
         <%= "Phone: #{user.phone}" if user.phone? %></br>
         <%= "Birthday: #{user.birthday.to_s}" if user.birthday? %></br>
         <%= "Moved in: #{user.moved_in}" if user.moved_in? %></br>

@@ -59,7 +59,10 @@
   </div>
 </div>
 
-<%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+<div class="btn-group">
+  <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+</div>
+
 <% end %>
 <br>
 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= link_to 'Back', admin_path %>
