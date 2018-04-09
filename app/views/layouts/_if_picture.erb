@@ -1,0 +1,5 @@
+<% if @user.picture? %>
+  <%= image_tag @user.picture.url(:default), class: 'img-rounded' %>
+<% else %>
+  <%= image_tag 'default_img.png', class: 'img-rounded' %>
+<% end %>

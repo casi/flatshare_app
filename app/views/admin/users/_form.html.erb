@@ -1,6 +1,5 @@
 <%= form_for([:admin, @user], html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
 <div class="row">
   <div class="col-md-6 col-sm-6 form-group">
     <%= f.label :name %>
@@ -20,7 +19,7 @@
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
-    <%= image_tag @user.picture.url, class: 'img-rounded' if @user.picture? %>
+    <%= render 'layouts/if_picture' %>
   </div>
 </div>
 
@@ -62,7 +61,6 @@
 <div class="btn-group">
   <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
 </div>
-
 <% end %>
 <br>
 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= link_to 'Back', admin_path %>

@@ -14,7 +14,11 @@
     <div class="media info">
       <div class="media-left">
         <div class="media-object">
-          <%= image_tag user.picture.url, class: 'img-rounded' if user.picture? %>
+          <% if user.picture? %>
+            <%= image_tag user.picture.url(:default), class: 'img-rounded' %>
+          <% else %>
+            <%= image_tag 'default_img.png', class: 'img-rounded' %>
+          <% end %>
         </div>
       </div>
       <div class="media-body">
