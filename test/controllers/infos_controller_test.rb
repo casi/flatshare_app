@@ -5,6 +5,7 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
   def setup
     @info = infos(:one)
     @user = users(:carsten)
+    @user2 = users(:tina)
   end
 
   test "should get index" do
@@ -51,8 +52,15 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+    log_in_as @user
     get edit_info_url(@info)
     assert_response :success
+  end
+
+  test 'should redirect to infos index instead of edit' do
+    log_in_as @user2
+    get edit_info_url(@info)
+    assert_redirected_to infos_url
   end
 
   test "should update info" do

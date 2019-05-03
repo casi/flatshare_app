@@ -5,7 +5,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:carsten)
     @user2 = users(:tina)
-    ##@user3 = users(:sarah)
   end
 
   test "should redirect index when not logged in" do
@@ -40,7 +39,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    #get login_path
+    get login_path
     log_in_as @user2
 
     patch user_url(@user2), params: {user: {name: @user2.name,
