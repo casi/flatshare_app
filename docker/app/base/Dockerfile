@@ -1,4 +1,4 @@
-FROM casi/ruby:2.3.3
+FROM casi257/ruby:2.6-stretch
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 	&& apt-get install --no-install-recommends apache2 imagemagick libapache2-mod-passenger -y \

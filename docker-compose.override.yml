@@ -1,15 +1,15 @@
-version: '3'
+version: "3"
 
 services:
-  bundler:
-    image: casi/app-fs:1.0-dev
+  bundle:
+    image: casi257/app-fs:1.0-dev
     volumes:
       - ./:/app:delegated
 
   app:
-    image: casi/app-fs:1.0-dev
+    image: casi257/app-fs:1.0-dev
+    working_dir: /var/www/app
     volumes:
       - ./:/var/www/app:cached
     ports:
       - 3000:8080
-
