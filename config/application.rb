@@ -23,5 +23,8 @@ module FlatshareApp
     config.version = File.read('config/version')
     config.time_zone = 'Berlin'
     config.active_record.default_timezone = :local
+
+    # since ActiveRecords needs to treat booleans as integers!
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
