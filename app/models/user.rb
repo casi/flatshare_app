@@ -10,7 +10,7 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   validates :name, presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
@@ -34,8 +34,6 @@ class User < ApplicationRecord
 
   # validates the size of an uploaded picture
   def picture_size
-    if picture.size > 5.megabytes
-      errors.add(:picture, 'should be less than 5 MB')
-    end
+    errors.add(:picture, 'should be less than 5 MB') unless picture.size < 5.megabytes
   end
 end
