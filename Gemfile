@@ -21,6 +21,8 @@ gem 'turbolinks',     '~> 5'
 gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
+  gem 'bootstrap-sass'
+  gem 'sassc-rails'
   gem 'faker'
   # BEGIN: copied from :default scope because we pre-compile in prod
   gem 'coffee-rails'
@@ -31,9 +33,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bootstrap-sass'
   gem 'listen',                 '>= 3.0.5', '< 3.2'
-  gem 'sassc-rails'
   gem 'spring'
   gem 'spring-watcher-listen',  '~> 2.0.0'
   gem 'web-console',            '>= 3.3.0'
