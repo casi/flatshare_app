@@ -6,17 +6,15 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.6.3'
 
-gem 'bcrypt',         '~> 3.1.11'
-gem 'bootstrap-sass'
-gem 'carrierwave',    '~> 1.2.3'
+gem 'bcrypt'
+gem 'carrierwave'
 gem 'jbuilder',       '~> 2.6'
 gem 'jquery-rails'
 gem 'mini_magick',    '~> 4.8'
-gem 'passenger',      '>= 6.0.2', require: 'phusion_passenger/rack_handler'
+gem 'puma'
+# gem 'passenger',      '>= 6.0.2', require: 'phusion_passenger/rack_handler'
 gem 'rails',          '~> 5.2.3'
-gem 'sassc-rails'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -33,7 +31,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bootstrap-sass'
   gem 'listen',                 '>= 3.0.5', '< 3.2'
+  gem 'sassc-rails'
   gem 'spring'
   gem 'spring-watcher-listen',  '~> 2.0.0'
   gem 'web-console',            '>= 3.3.0'
