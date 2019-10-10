@@ -41,12 +41,13 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
+  gem 'webdrivers'
 
   # for code climate test coverage
   gem 'codeclimate-test-reporter'

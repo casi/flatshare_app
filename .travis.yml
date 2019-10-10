@@ -16,7 +16,8 @@ before_script:
   - RAILS_ENV=test bundle exec rails db:create db:migrate
 
 rvm:
-  - 2.6.3
+  - 2.6.4
+  - 2.6.5
   - ruby-head
 
 matrix:
