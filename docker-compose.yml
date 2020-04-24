@@ -1,15 +1,19 @@
-version: '3'
+version: "3"
 
 volumes:
   app-db:
 
 services:
-
   app:
-    image: casi257/app-fs:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile.development
     volumes:
       - app-db:/data
-    env_file: .env
-    working_dir: /var/www/app
-    entrypoint: ["/usr/local/bin/entrypoint.sh"]
-    command: ["apache2ctl", "-DFOREGROUND", "-DNO_DETACH"]
+      - .:/app
+    ports:
+      - 8080:3000
+    tty: true
+    stdin_open: true
+    command: "bundle exec rails server -p 3000"
+    # command: ["apache2ctl", "-DFOREGROUND", "-DNO_DETACH"]
