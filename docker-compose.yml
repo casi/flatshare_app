@@ -1,15 +1,31 @@
-version: '3'
-
-volumes:
-  app-db:
+version: "3.7"
 
 services:
-
   app:
-    image: casi257/app-fs:latest
+    build:
+      context: .
+      target: dev
+    stdin_open: true
+    tty: true
+    command: ["./bin/start_dev_server"]
     volumes:
-      - app-db:/data
-    env_file: .env
-    working_dir: /var/www/app
-    entrypoint: ["/usr/local/bin/entrypoint.sh"]
-    command: ["apache2ctl", "-DFOREGROUND", "-DNO_DETACH"]
+      - ".:/usr/src/app"
+      - bundle:/bundle
+      - /usr/src/app/tmp
+      - /usr/src/app/log
+      - /usr/src/app/storage
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_PASSWORD: db_password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  bundle:
+  postgres:
