@@ -186,7 +186,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (13.0.1)
-    rb-fsevent (0.10.3)
+    rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     ref (2.0.0)
@@ -267,13 +267,13 @@ DEPENDENCIES
   faker
   guard
   guard-minitest
-  jbuilder (~> 2.6)
+  jbuilder (~> 2.10)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  mini_magick (~> 4.8)
+  mini_magick (~> 4.10)
   minitest-reporters
   puma
-  rails (~> 5.2.3)
+  rails (~> 5.2.4)
   rails-controller-testing
   sassc-rails
   selenium-webdriver

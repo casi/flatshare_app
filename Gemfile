@@ -9,12 +9,12 @@ end
 
 gem 'bcrypt'
 gem 'carrierwave'
-gem 'jbuilder',       '~> 2.6'
+gem 'jbuilder',       '~> 2.10'
 gem 'jquery-rails'
-gem 'mini_magick',    '~> 4.8'
+gem 'mini_magick',    '~> 4.10'
 gem 'puma'
 # gem 'passenger',      '>= 6.0.2', require: 'phusion_passenger/rack_handler'
-gem 'rails',          '~> 5.2.3'
+gem 'rails',          '~> 5.2.4'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
 # See https://github.com/rails/execjs#readme for more supported runtimes
