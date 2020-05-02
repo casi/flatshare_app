@@ -3,12 +3,12 @@
   vars:
     docker_compose_version: "1.25.5"
   tasks:
-    #- name: install required packages
-      #become: true
-      #apt:
-        #pkg:
-          #- git
-          #- docker
+    - name: install required packages
+      become: true
+      apt:
+        pkg:
+          - git
+          - docker
     - name: Get uname s
       shell: 'uname -s'
       register: unames
