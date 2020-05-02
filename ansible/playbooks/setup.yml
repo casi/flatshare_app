@@ -1,0 +1,32 @@
+---
+- hosts: all
+  vars:
+    docker_compose_version: "1.25.5"
+  tasks:
+    #- name: install required packages
+      #become: true
+      #apt:
+        #pkg:
+          #- git
+          #- docker
+    - name: Get uname s
+      shell: 'uname -s'
+      register: unames
+    - name: Get uname m
+      shell: 'uname -m'
+      register: unamem
+    - name: see url
+      debug:
+        msg: "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ unames.stdout_lines[0] }}-{{ unamem.stdout_lines[0] }}"
+    - name: Install docker-compose
+      become: true
+      get_url:
+        url : "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ unames.stdout_lines[0] }}-{{ unamem.stdout_lines[0] }}"
+        dest: /usr/local/bin/docker-compose
+        mode: 'u+x,g+x'
+        mode: 0755
+    - name: Download application
+      become: true
+      git:
+        repo: 'https://github.com/casi/flatshare_app.git'
+        dest: /flatshare_app
