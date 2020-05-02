@@ -40,3 +40,5 @@ vendor/bundle
 public/assets
 coverage
 .env
+.env.production
+config/database.yml

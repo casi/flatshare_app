@@ -9,7 +9,7 @@ services:
     tty: true
     command: ["./bin/start_dev_server"]
     volumes:
-      - ".:/usr/src/app"
+      - .:/usr/src/app
       - bundle:/bundle
       - /usr/src/app/tmp
       - /usr/src/app/log

@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    stdin_open: true
+    tty: true
+    command: "bundle exec rails s"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    depends_on:
+      - db
+  db:
+    image: postgres:10
+    env_file:
+      - .env.production
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:

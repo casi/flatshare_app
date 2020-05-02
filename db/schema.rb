@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2016_08_05_163723) do
 
-  create_table "comments", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", id: :serial, force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
     t.integer "info_id"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2016_08_05_163723) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "infos", force: :cascade do |t|
+  create_table "infos", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.boolean "archived"
@@ -33,21 +36,21 @@ ActiveRecord::Schema.define(version: 2016_08_05_163723) do
     t.index ["user_id"], name: "index_infos_on_user_id"
   end
 
-  create_table "listitems", force: :cascade do |t|
+  create_table "listitems", id: :serial, force: :cascade do |t|
     t.string "item"
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "qandas", force: :cascade do |t|
+  create_table "qandas", id: :serial, force: :cascade do |t|
     t.string "question"
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone"
@@ -63,4 +66,7 @@ ActiveRecord::Schema.define(version: 2016_08_05_163723) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "infos"
+  add_foreign_key "comments", "users"
+  add_foreign_key "infos", "users"
 end
