@@ -61,4 +61,4 @@ bash:
 	docker-compose -f docker-compose-prod.yml run --rm app bash
 
 console:
-	docker-compose -f docker-compose-prod.yml run --rm app bundle exec rails c
+	docker-compose -f docker-compose-prod.yml exec app bundle exec rails c

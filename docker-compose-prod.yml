@@ -5,8 +5,6 @@ services:
     build:
       context: .
       target: production
-    stdin_open: true
-    tty: true
     command: "bundle exec rails s"
     ports:
       - "3000:3000"

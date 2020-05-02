@@ -5,7 +5,5 @@ services:
     build:
       context: .
       target: base
-    stdin_open: true
     volumes:
       - .:/usr/src/app
-    tty: true
