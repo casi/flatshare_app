@@ -9,9 +9,9 @@ end
 
 gem 'bcrypt'
 gem 'carrierwave'
-gem 'jbuilder',       '~> 2.6'
+gem 'jbuilder',       '~> 2.10'
 gem 'jquery-rails'
-gem 'mini_magick',    '~> 4.8'
+gem 'mini_magick',    '~> 4.10'
 gem 'puma'
 gem 'pg'
 
@@ -19,7 +19,7 @@ gem 'bootstrap-sass'
 gem 'sassc-rails'
 gem 'uglifier'
 
-gem 'rails',          '~> 5.2.3'
+gem 'rails',          '~> 5.2.4'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
 gem 'therubyracer', platforms: :ruby
