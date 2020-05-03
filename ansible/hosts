@@ -1,0 +1,1 @@
+host_name ansible_user=username ansible_become=true ansible_become_pass=password
