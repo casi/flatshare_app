@@ -32,7 +32,7 @@ dev:
 	docker-compose -f docker-compose.yml run --rm app sh
 
 spec:
-	docker-compose -f docker-compose.yml run --rm app rake
+	docker-compose -f docker-compose.yml run --rm app sh -c 'RAILS_ENV=test rake'
 
 start:
 	docker-compose -f docker-compose.yml up -d
