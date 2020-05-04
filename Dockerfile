@@ -1,4 +1,5 @@
 FROM ruby:2.6.1 as base
+ENV RAILS_ENV=development
 COPY config/database.yml.sample config/database.yml
 ENV INSTALL_PATH /usr/src/app
 RUN mkdir -p $INSTALL_PATH

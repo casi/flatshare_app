@@ -1,8 +1,15 @@
 init:
+	make build
 	@cp config/database.yml.sample config/database.yml
+
+clean:
+	docker volume rm flatshare_app_postgres
+
+build:
 	docker-compose -f docker-compose.yml build
 
 bundle:
+	make build
 	docker-compose -f docker-compose.yml run --rm app bundle
 
 start-db:
@@ -34,6 +41,7 @@ stop:
 	docker-compose -f docker-compose.yml down
 
 setup:
+	make stop
 	make init
 	make bundle
 	make start-db

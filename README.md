@@ -35,7 +35,9 @@ make test
 
 ### Heroku
 For a deploying the application to Heroku please follow this guide [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku).
-In order to deploy the application on a linux server, initial steps would require one to setup docker and docker compose. After cloning the project to the server you can and then run `make deploy` and the application should run
+
+### For plain Linux machine
+In order to deploy the application on a linux server, initial steps would require one to setup docker and docker compose. After cloning the project to the server you can and then run `make deploy` and the application should start up
 
 ## Authors
 
