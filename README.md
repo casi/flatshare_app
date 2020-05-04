@@ -37,6 +37,14 @@ make test
 For a deploying the application to Heroku please follow this guide [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku).
 
 ### For plain Linux machine
+#### Setting up server for application
+In order to ensure that your linux server has the required libraries and docker setup follow the following steps.
+1. Update the `ansible/hosts` with your ssh credentials
+2. `cd` into ansible folder
+3. Run `make setup` and ansible will take over and install all the requirements in oder to run the application. It will also download the application onto the server from github.
+4. Once this is complete, ssh onto the server and run `make deploy`
+
+#### Deploying the application
 In order to deploy the application on a linux server, initial steps would require one to setup docker and docker compose. After cloning the project to the server you can and then run `make deploy` and the application should start up
 
 ## Authors
