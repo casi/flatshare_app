@@ -1,19 +1,31 @@
-version: "3"
-
-volumes:
-  app-db:
+version: "3.7"
 
 services:
   app:
     build:
-      context: ./
-      dockerfile: Dockerfile.development
-    volumes:
-      - app-db:/data
-      - .:/app
-    ports:
-      - 8080:3000
-    tty: true
+      context: .
+      target: dev
     stdin_open: true
-    command: "bundle exec rails server -p 3000"
-    # command: ["apache2ctl", "-DFOREGROUND", "-DNO_DETACH"]
+    tty: true
+    command: ["./bin/start_dev_server"]
+    volumes:
+      - .:/usr/src/app
+      - bundle:/bundle
+      - /usr/src/app/tmp
+      - /usr/src/app/log
+      - /usr/src/app/storage
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_PASSWORD: db_password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  bundle:
+  postgres:

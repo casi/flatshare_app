@@ -1,4 +1,5 @@
 # Flatshare app
+![logo](./docs/logo.png)
 
 [![Build Status](https://travis-ci.org/casi/flatshare_app.svg?branch=master)](https://travis-ci.org/casi/flatshare_app)
 [![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
@@ -8,72 +9,35 @@ This small application (written with **Rails 5**) lets members of a shared flat 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-To start developing you need a running version of **Ruby (now 2.6.3)** on your local machine.
+To start developing you need to have docker and docker-compose installed on your machine
 
 ### Installing
 
 After cloning this repository run:
 
 ```
-cp .env.dist .env
-bundle install
+make setup
 ```
-
-**OR** if you want to use the Docker integration for development:
-
-```
-docker-compose up bundle
-```
-
-do the database setup (migrate and seed)
-
-```
-rails db:setup
-```
-
-start the local webserver
-
-```
-passenger start
-```
-
-**OR** if you want to use the Docker integration for development:
-
-```
-docker-compose up -d app
-```
-
-and have fun testing it out (http://localhost:3000/)! ;)
 
 ## Running the tests
 
 To run the whole test suite:
 
 ```
-rails test
+make test
 ```
 
 ## Deployment
 
-For a deployment example please read [devcenter on heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku) for installing on the popular Rails hoster or the respective manuals from your Rails hosting provider.
+### Heroku
+For a deploying the application to Heroku please follow this guide [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku).
 
-### Build application base + development docker images
-
-    docker build -f docker/app/base/Dockerfile -t casi257/app-fs:1.0-base docker/app/base/
-    docker build -f docker/app/dev/Dockerfile -t casi257/app-fs:1.0-dev docker/app/dev/
-
-### Steps
-
-- `git checkout` the branch / tag you want to deploy
-- build image `docker build --tag casi/app-fs:latest .`
-- push image to registry `docker push casi/app-fs:latest`
-- create `.env` for production use
-- upload `docker-compose.yml` and `docker-compose.prod.yml`
-- run `docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d`
+### For plain Linux machine
+In order to deploy the application on a linux server, initial steps would require one to setup docker and docker compose. After cloning the project to the server you can and then run `make deploy` and the application should start up
 
 ## Authors
 
