@@ -13,23 +13,25 @@ gem 'jbuilder',       '~> 2.10'
 gem 'jquery-rails'
 gem 'mini_magick',    '~> 4.10'
 gem 'puma'
-# gem 'passenger',      '>= 6.0.2', require: 'phusion_passenger/rack_handler'
+gem 'pg', '~> 1.2', '>= 1.2.3'
+
+gem 'bootstrap-sass'
+gem 'sassc-rails'
+gem 'uglifier'
+
 gem 'rails',          '~> 5.2.4'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
-# See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
-  gem 'bootstrap-sass'
-  gem 'sassc-rails'
   gem 'faker'
   # BEGIN: copied from :default scope because we pre-compile in prod
   gem 'coffee-rails'
-  gem 'uglifier'
   # END: copied from :default scope because we pre-compile in prod
   gem 'awesome_print'
   gem 'byebug', platform: :mri
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do
