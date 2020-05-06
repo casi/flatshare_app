@@ -49,21 +49,12 @@ In order to deploy the application on a linux server, initial steps would requir
 
 ## Authors
 
-This project is a work of and maintained by Carsten Behnert. Looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
+This project is a work of and maintained by Carsten Behnert. I'm still looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
+
+## Contributing
+
+If you like to contribute to the project - which I appreciate, please read the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-### TODOs
-
-v1.0:
-
-- [ ] Basic Admin Interface
-- [ ] Full Test Coverage (!!!)
-
-v1.1:
-
-- [ ] Cashpoint Manager
-- [ ] Housework Rota (dynamic)
-- [ ] Calendar (Events etc)
