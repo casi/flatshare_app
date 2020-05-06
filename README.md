@@ -49,11 +49,11 @@ In order to deploy the application on a linux server, initial steps would requir
 
 ## Authors
 
-This project is a work of and maintained by Carsten Behnert. Looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
+This project is a work of and maintained by Carsten Behnert. I'm still looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
 
 ## Contributing
 
-If you like to contribute to the project - wich I appreciate, please read the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+If you like to contribute to the project - which I appreciate, please read the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
