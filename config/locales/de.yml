@@ -1,0 +1,29 @@
+# Germany german translations
+de:
+  time:
+    formats:
+      short: "%d.%m.%Y %H:%M"
+
+  sessions:
+    headline: "Einloggen"
+    label:
+      email: "E-Mail"
+      password: "Passwort"
+    submit: "Eintreten"
+    info: "Wenn du keinen Account hast, bitte einen Mitbewohner dir einen anzulegen."
+  mainmenu:
+    infos: "Infos"
+    news-and-infos: "Neues & Infos"
+    q-and-a: "Fragen & Anworten"
+    house-rules: "Hausregeln"
+    list:
+      name: "Liste"
+      title: "Einkaufsliste"
+    housework:
+      name: "Hausarbeit"
+      title: "Hausarbeit (nicht vergesen!)"
+    flatmates:
+      name: "Mitbewohner"
+      title: "Mitbewohner"
+    edit-profile: "Profil bearbeiten"
+    log-out: "Ausloggen"
