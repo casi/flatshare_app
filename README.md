@@ -1,4 +1,5 @@
 # Flatshare app
+
 ![logo](./docs/logo.png)
 
 [![Build Status](https://travis-ci.org/casi/flatshare_app.svg?branch=master)](https://travis-ci.org/casi/flatshare_app)
@@ -19,7 +20,7 @@ To start developing you need to have docker and docker-compose installed on your
 
 After cloning this repository run:
 
-```
+```bash
 make setup
 ```
 
@@ -27,33 +28,45 @@ make setup
 
 To run the whole test suite:
 
-```
+```bash
 make test
 ```
 
 ## Deployment
 
 ### Heroku
+
 For a deploying the application to Heroku please follow this guide [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4#deploy-your-application-to-heroku).
 
 ### For plain Linux machine
+
 #### Setting up server for application
+
 In order to ensure that your linux server has the required libraries and docker setup follow the following steps.
+
 1. Update the `ansible/hosts` with your ssh credentials
 2. `cd` into ansible folder
 3. Run `make setup` and ansible will take over and install all the requirements in oder to run the application. It will also download the application onto the server from github.
 4. Once this is complete, ssh onto the server and run `make deploy`
 
 #### Deploying the application
+
 In order to deploy the application on a linux server, initial steps would require one to setup docker and docker compose. After cloning the project to the server you can and then run `make deploy` and the application should start up
 
 ## Authors
 
-This project is a work of and maintained by Carsten Behnert. I'm still looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
+This project is a work of and maintained by
+
+- Carsten Behnert
+- [Cameron Norman](https://github.com/cameronnorman) (co-maintainer)
+- ...
+
+I'm still looking for some other contributors to get in touch with for knowledge excange. If YOU like to, feel free to fork this project and send a pull request. :)
 
 ## Contributing
 
 If you like to contribute to the project - which I appreciate, please read the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+Please respect the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
