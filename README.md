@@ -28,7 +28,7 @@ make setup
 To run the whole test suite:
 
 ```
-make test
+make
 ```
 
 ## Deployment
