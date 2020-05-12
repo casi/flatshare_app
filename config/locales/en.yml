@@ -4,6 +4,14 @@ en:
     formats:
       short: "%Y-%m-%d %H:%M"
 
+  controllers:
+    infos:
+      create:
+        created: "New Info created."
+      update:
+        updated: "Info has been updated."
+      archived: "Info archiviert (zum Nachlesen)."
+
   sessions:
     headline: "Log In"
     label:
@@ -13,7 +21,7 @@ en:
     info: "If you don't have an account please ask a flatmate to create one for you."
   mainmenu:
     infos: "Infos"
-    news-and-infos: "News & Infos"
+    infos: "Infos"
     q-and-a: "Qs & As"
     house-rules: "House Rules"
     list:
@@ -27,3 +35,38 @@ en:
       title: "Persons who we live together"
     edit-profile: "Edit Profile"
     log-out: "Log out"
+  comment:
+    form:
+      placeholder: "Write a comment"
+      button-text: "Save"
+      link-back: "back"
+  info:
+    form:
+      title:
+        label: "Title"
+        placeholder: "Concise title which describes the news the best"
+      content:
+        label: "Content"
+        placeholder: "Write something new or flatshare related stuff..."
+      link-back: "back"
+    archive:
+      title: "The Infos Archive"
+    edit:
+      title: "Edit Info"
+      button-text: "Save changes"
+    index:
+      title: "Infos"
+      sub-headline: "What's new in our shared flat community?"
+      submit-title: "Info"
+      archive-link: "Archive"
+      marginal:
+        head1: "You live here"
+        head2: "Local Public Transport"
+      link:
+        edit: "Edit"
+        to-archive: "to archive"
+    new:
+      title: "New Info"
+      button-text: "Save"
+    show:
+      title: "Info"

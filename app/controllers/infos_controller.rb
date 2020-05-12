@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class InfosController < ApplicationController
-  before_action :logged_in_user, only: [:index, :create]
-  before_action :set_info, only: [:show, :edit, :update]
+  before_action :logged_in_user, only: %i[index create]
+  before_action :set_info, only: %i[show edit update]
 
   def index
     @infos = Info.not_archived
     @archived_count = Info.archived.count
   end
 
-  def show 
+  def show
     @info = Info.find(params[:id])
   end
 
@@ -15,15 +17,14 @@ class InfosController < ApplicationController
     @info = Info.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @info = current_user.infos.build(info_params)
     @info.archived = false
 
     if @info.save
-      flash[:success] = 'Info successfully created.'
+      flash[:success] = t 'controllers.infos.create.created'
       redirect_to infos_url
     else
       render :new
@@ -32,7 +33,7 @@ class InfosController < ApplicationController
 
   def update
     if @info.update(info_params)
-      flash[:success] = 'Info updated.'
+      flash[:success] = t 'controllers.infos.update.updated'
       redirect_to infos_url
     else
       render :edit
@@ -46,15 +47,13 @@ class InfosController < ApplicationController
 
   private
 
-    def info_params
-      params.require(:info).permit(:title, :content, :archived)
-    end
+  def info_params
+    params.require(:info).permit(:title, :content, :archived)
+  end
 
-    # Before actions
+  # Before actions
 
-    def set_info
-      @info = Info.find(params[:id])
-    end
-
-
+  def set_info
+    @info = Info.find(params[:id])
+  end
 end

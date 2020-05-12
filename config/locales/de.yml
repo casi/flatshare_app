@@ -4,6 +4,14 @@ de:
     formats:
       short: "%d.%m.%Y %H:%M"
 
+  controllers:
+    infos:
+      create:
+        created: "Neue Info angelegt."
+      update:
+        updated: "Info aktualisiert."
+      archived: "Info archiviert (zum Nachlesen)."
+
   sessions:
     headline: "Einloggen"
     label:
@@ -13,7 +21,7 @@ de:
     info: "Wenn du keinen Account hast, bitte einen Mitbewohner dir einen anzulegen."
   mainmenu:
     infos: "Infos"
-    news-and-infos: "Neues & Infos"
+    infos: "Infos"
     q-and-a: "Fragen & Anworten"
     house-rules: "Hausregeln"
     list:
@@ -27,3 +35,38 @@ de:
       title: "Mitbewohner"
     edit-profile: "Profil bearbeiten"
     log-out: "Ausloggen"
+  comment:
+    form:
+      placeholder: "Schreibe einen Kommentar"
+      button-text: "Speichern"
+      link-back: "Zurück"
+  info:
+    form:
+      title:
+        label: "Überschrift"
+        placeholder: "Eine knackige Überschrift, die den Inhalt am besten beschreibt"
+      content:
+        label: "Information"
+        placeholder: "Schreibe eine Neuigkeit oder etwas für die WG Nützliches"
+      link-back: "Zurück"
+    archive:
+      title: "Das Infos-Archv"
+    edit:
+      title: "Info Bearbeiten"
+      button-text: "Speichern"
+    index:
+      title: "Infos"
+      sub-headline: "Was gibt es Neues in unserer WG?"
+      submit-title: "Info"
+      archive-link: "Archiv"
+      marginal:
+        head1: "Hier wohnst du"
+        head2: "Örtlicher Personen-Nahverkehr (ÖPNV)"
+      link:
+        edit: "Bearbeiten"
+        to-archive: "archivieren"
+    new:
+      title: "Neue Info"
+      button-text: "Speichern"
+    show:
+      title: "Info"
