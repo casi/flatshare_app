@@ -4,6 +4,10 @@ en:
     formats:
       short: "%Y-%m-%d %H:%M"
 
+  form:
+    button-save: "Save"
+    link-back: "Back"
+
   controllers:
     infos:
       create:
@@ -11,6 +15,11 @@ en:
       update:
         updated: "Info has been updated."
       archived: "Info archiviert (zum Nachlesen)."
+    qandas:
+      create:
+        created: "New question saved."
+      update:
+        updated: "Question/Answer update saved."
 
   sessions:
     headline: "Log In"
@@ -19,8 +28,8 @@ en:
       password: "Password"
     submit: "Enter"
     info: "If you don't have an account please ask a flatmate to create one for you."
+
   mainmenu:
-    infos: "Infos"
     infos: "Infos"
     q-and-a: "Qs & As"
     house-rules: "House Rules"
@@ -35,11 +44,13 @@ en:
       title: "Persons who we live together"
     edit-profile: "Edit Profile"
     log-out: "Log out"
+
   comment:
     form:
       placeholder: "Write a comment"
       button-text: "Save"
       link-back: "back"
+
   info:
     form:
       title:
@@ -70,3 +81,23 @@ en:
       button-text: "Save"
     show:
       title: "Info"
+
+  qandas:
+    form:
+      question:
+        label: "Question"
+        placeholder: "What do you want to know"
+      answer:
+        label: "Answer"
+        placeholder: "If you know the answer ..."
+      link-back: "Back"
+    edit:
+      title: "Edit Question/Answer"
+      button-text: ""
+    index:
+      title: "Questions and Answers"
+      sub-headline: "Do you have questions or answers about our flatshare, %{flat_city} or %{flat_country} in general?"
+      submit-title: "Question"
+    new:
+      title: "New Question"
+      button-text: "Save"
