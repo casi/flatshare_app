@@ -40,6 +40,10 @@ start:
 stop:
 	docker-compose -f docker-compose.yml down
 
+restart:
+	make stop
+	make start
+
 setup:
 	make stop
 	make init
