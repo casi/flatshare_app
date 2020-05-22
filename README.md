@@ -28,8 +28,8 @@ make setup
 
 To run the whole test suite:
 
-```bash
-make test
+```
+make
 ```
 
 ## Deployment

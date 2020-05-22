@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := spec
+
 init:
 	make build
 	@cp config/database.yml.sample config/database.yml
