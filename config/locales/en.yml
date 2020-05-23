@@ -101,3 +101,12 @@ en:
     new:
       title: "New Question"
       button-text: "Save"
+
+  static-pages:
+    housework:
+      title: "Housework Rota"
+      sub-headline: "Our current housework rota/cleaning plan (static version)."
+      panel-headline: "Explanations (What should I do and when?)"
+    rules:
+      title: "General House Rules"
+      sub-headline: "Yeah, rules. Annoying, we know. But it makes a peaceful together easier. If you have any questions or you just want to discuss these rules don't be afraid to speak with your flatmates."
