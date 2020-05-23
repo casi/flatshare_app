@@ -82,6 +82,11 @@ en:
     show:
       title: "Info"
 
+  listitems:
+    title: "Shopping List"
+    sub-headline: "What is needed for the shared flat (e.g. washing-up liquid, toilet paper, laundry detergent, etc.)? Everyone should buy these things from time to time."
+    modal-title: "Add a new thing to buy"
+
   qandas:
     form:
       question:
