@@ -7,7 +7,7 @@ class InfosController < ApplicationController
     @archived_count = Info.archived.count
   end
 
-  def show 
+  def show
     @info = Info.find(params[:id])
   end
 

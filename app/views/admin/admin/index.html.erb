@@ -38,20 +38,20 @@
             <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
 
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
+            <td><%= link_to "delete", [:admin, info], method: :delete,
                 data: { confirm: "Are you sure want to delete #{info.title}?" },
                 class: 'text-danger' %></td>
           </tr>
         <% end %>
           <tr>
             <td colspan="4"><h5>archived infos (<%= @infos_arch.count %>)</h5></td>
-          </tr>        
+          </tr>
         <% @infos_arch.each do |info| %>
           <tr>
             <td><%= l info.created_at, format: :short %></td>
             <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
+            <td><%= link_to "delete", [:admin, info], method: :delete,
                 data: { confirm: "Are you sure want to delete #{info.title}?" } %></td>
           </tr>
         <% end %>

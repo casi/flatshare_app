@@ -1,4 +1,4 @@
-# default user 
+# default user
 User.create!(id:                    0,
              name:                  "Deleted User",
              email:                 "default@example.org",
@@ -25,7 +25,7 @@ Listitem.create!(item: "no items yet",
 10.times do |n|
   item = Faker::Lorem.sentence
   Listitem.create!(item:         item,
-                   done:         false) 
+                   done:         false)
 end
 
 #5 dummy users

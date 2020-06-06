@@ -8,7 +8,7 @@ class Admin::InfosController < ApplicationController
     redirect_to admin_url
   end
 
-  private 
+  private
      # Before filter
 
     # Confirms an admin user.

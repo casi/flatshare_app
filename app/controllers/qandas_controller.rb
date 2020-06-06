@@ -12,7 +12,7 @@ class QandasController < ApplicationController
   def edit
     @qanda = Qanda.find(params[:id])
   end
-  
+
   def create
     @qanda = Qanda.new(qanda_params)
 

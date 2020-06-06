@@ -18,7 +18,7 @@ class ListitemsController < ApplicationController
 
   def update
   	@shopping_item = Listitem.find(params[:id])
-    
+
     if @shopping_item.update(list_params)
       redirect_to listitems_url
     end
