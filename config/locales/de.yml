@@ -4,13 +4,37 @@ de:
     formats:
       short: "%d.%m.%Y %H:%M"
 
+  form:
+    button-save: "Speichern"
+    link-back: "Zurück"
+
   controllers:
+    applications:
+      log-in: "Bitte zuerst einloggen."
     infos:
       create:
         created: "Neue Info angelegt."
       update:
         updated: "Info aktualisiert."
       archived: "Info archiviert (zum Nachlesen)."
+    listitems:
+      create:
+        created: "Listen-Eintrag hinzugefügt."
+      destroy:
+        destroyed: "Bereits gekaufte Sachen gelöscht."
+    qandas:
+      create:
+        created: "Neue Frage angelegt."
+      update:
+        updated: "Frage/Antwort geupdatet."
+    sessions:
+      create:
+        danger: "Falsche E-Mail-/Passwort-Kombination!"
+    users:
+      create:
+        created: "User %{name} angelegt!"
+      update:
+        updated: "Änderung erfolgreich!"
 
   sessions:
     headline: "Einloggen"
@@ -19,8 +43,8 @@ de:
       password: "Passwort"
     submit: "Eintreten"
     info: "Wenn du keinen Account hast, bitte einen Mitbewohner dir einen anzulegen."
+
   mainmenu:
-    infos: "Infos"
     infos: "Infos"
     q-and-a: "Fragen & Anworten"
     house-rules: "Hausregeln"
@@ -35,11 +59,13 @@ de:
       title: "Mitbewohner"
     edit-profile: "Profil bearbeiten"
     log-out: "Ausloggen"
+
   comment:
     form:
       placeholder: "Schreibe einen Kommentar"
       button-text: "Speichern"
       link-back: "Zurück"
+
   info:
     form:
       title:
@@ -70,3 +96,89 @@ de:
       button-text: "Speichern"
     show:
       title: "Info"
+
+  listitems:
+    title: "Einkaufsliste"
+    sub-headline: "Was benötigt die WG (z.B. Spüli, Toilettenpapier, Waschmittel, etc.)? Jeder sollte mal was für die WG kaufen."
+    modal-title: "Füge etwas Benötigtes hinzu"
+
+  qandas:
+    form:
+      question:
+        label: "Frage"
+        placeholder: "Was möchtest du wissen"
+      answer:
+        label: "Antwort"
+        placeholder: "Wenn du die Antwort kennst..."
+      link-back: "Zurück"
+    edit:
+      title: "Bearbeite Frage/Antwort"
+      button-text: ""
+    index:
+      title: "Fragen und Antworten"
+      sub-headline: "Hast du Fragen oder Antworten über unsere WG, %{flat_city} oder %{flat_country} im Allgemeinen?"
+      submit-title: "Frage"
+    new:
+      title: "Neue Frage"
+      button-text: "Speichern"
+
+  static-pages:
+    housework:
+      title: "Putzplan"
+      sub-headline: "Unser aktueller Putzplan (statische Version)."
+      panel-headline: "Erläuterungen (Was sollte ich tun und wann?)"
+    rules:
+      title: "Allgemeine Hausregeln"
+      sub-headline: "Joa, Regeln. Nervig, wissen wir alle. Aber es macht ein friedliches Zusammenleben einfacher. Wenn du Fragen oder Diskussionsbedarf hast, scheue dich nicht deine/n Mitbewohner anzusprechen."
+
+  users:
+    deleted-user: "Gelöschter Mitbewohner"
+    form:
+      name:
+        label: "Name"
+        placeholder: "Vorname reicht aus"
+      email:
+        label: "E-Mail"
+      phone:
+        label: "Telefonnummer"
+      picture:
+        label: "Foto"
+      birthday:
+        label: "Geburtsdatum"
+        placeholder: "yyyy-mm-dd ...für ein Geschenk? ;)"
+      moved-in:
+        label: "Eingezogen am"
+      moved-out:
+        label: "Ausgezogen am"
+      description:
+        label: "Beschreibung"
+        placeholder: "Schreibe was Interessantes über dich, wenn du magst."
+      language:
+        label: "Wähle deine Sprache"
+      password:
+        label: "Passwort"
+      password-confirmation:
+        label: "Passwort bestätigen"
+    edit:
+      title: "Bearbeite dein Profil"
+    index:
+      title: "Alle Mitbewohner"
+      sub-headline: "Wer wohnt hier eigentlich alles?"
+      submit-title: "Mitbewohner"
+    new:
+      title: "Einen Mitbewohner hinzufügen"
+  
+  admin:
+    admin:
+      index:
+        title: "Admin Dashboard"
+        user:
+          delete:
+            confirm: "Bist du wirklich sicher %{name} zu löschen?"
+          deleted-user: "gelöschter Nutzer"
+        info:
+          delete:
+            confirm: "Sicher, dass du Info \"%{title}\" löschen willst?"
+    users:
+      edit:
+        title: "Bearbeite %{name}s Profil"

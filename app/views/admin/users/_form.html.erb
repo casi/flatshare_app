@@ -2,20 +2,20 @@
   <%= render 'shared/error_messages', object: f.object %>
 <div class="row">
   <div class="col-md-6 col-sm-6 form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', placeholder: "firstname is enough" %>
+    <%= f.label t 'users.form.name.label' %>
+    <%= f.text_field :name, class: 'form-control' %>
     <div class="form-group">
-      <%= f.label :email %>
+      <%= f.label t 'users.form.email.label' %>
       <%= f.email_field :email, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :phone %>
+      <%= f.label t 'users.form.phone.label' %>
       <%= f.telephone_field :phone, class: 'form-control' %>
     </div>
   </div>
 
   <div class="col-md-6 col-sm-6">
-    <%= f.label :picture %>
+    <%= f.label t 'users.form.picture.label' %>
     <span class="picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
@@ -25,35 +25,38 @@
 
 <div class="row">
   <div class="col-md-4 col-sm-4 form-group">
-    <%= f.label :birthday %>
-    <%= f.text_field :birthday, class: 'form-control', 
-                      placeholder: "yyyy-mm-dd or dd.mm.yyyy ...for b-day present? ;)" %>
+    <%= f.label t 'users.form.birthday.label' %>
+    <%= f.text_field :birthday,
+                      class: 'form-control', 
+                      placeholder: "#{ t 'users.form.birthday.placeholder' }" %>
   </div>
   <div class="col-md-4 col-sm-4 form-group">
-    <%= f.label :moved_in %>
+    <%= f.label t 'users.form.moved-in.label' %>
     <%= f.text_field :moved_in, class: 'form-control' %>
   </div>
   <div class="col-md-4 col-sm-4 form-group">
-    <%= f.label :moved_out %>
+    <%= f.label t 'users.form.moved-out.label' %>
     <%= f.text_field :moved_out, class: 'form-control' %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12 col-sm-12 form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control', size: '10x6',
-                    placeholder: "Say something short about you..." %>
+    <%= f.label t 'users.form.description.label' %>
+    <%= f.text_area :description,
+                    class: 'form-control',
+                    size: '10x6',
+                    placeholder: "#{ t 'users.form.description.placeholder' }" %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6 col-sm-6 form-group">
-    <%= f.label :password %>
+    <%= f.label t 'users.form.password.label' %>
     <%= f.password_field :password, class: 'form-control' %>
   </div>
   <div class="col-md-6 col-sm-6 form-group">
-    <%= f.label :password_confirmation %>
+    <%= f.label t 'users.form.password-confirmation.label' %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
   </div>
 </div>
@@ -69,7 +72,7 @@
   $('#user_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
+      alert("#{ t 'users.form.image-alert' }");
     }
   });
 </script>

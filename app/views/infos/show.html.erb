@@ -7,7 +7,7 @@
   	<% end %>
   </h2>
   <div class="col-md-8 col-md-offset-2 info">
-	<p><%= @info.user ? @info.user.name : "#{ t 'user.deleted' }" %></p>
+	<p><%= @info.user ? @info.user.name : "#{ t 'users.deleted-user' }" %></p>
 	<small><%= l @info.created_at, format: :short %> |
 	<%= l @info.updated_at, format: :short %></small><br>
 	<p><%= simple_format(@info.content) %></p>

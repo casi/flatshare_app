@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "User #{@user.name} created!"
+      flash[:success] = "#{ t 'controllers.users.create.created', name: @user.name }"
       redirect_to users_url
     else
       render :new
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Update successful!"
+      flash[:success] = t 'controllers.users.update.updated'
       redirect_to edit_user_path(@user)
     else
       render :edit
@@ -55,5 +55,4 @@ class UsersController < ApplicationController
   def admin_user
     redirect_to(root_url) unless current_user.admin?
 =end
-
 end

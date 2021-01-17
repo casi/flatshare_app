@@ -9,17 +9,32 @@ en:
     link-back: "Back"
 
   controllers:
+    applications:
+      log-in: "Please log in first."
     infos:
       create:
         created: "New Info created."
       update:
         updated: "Info has been updated."
-      archived: "Info archiviert (zum Nachlesen)."
+      archived: "Info archived (for gleaning)."
+    listitems:
+      create:
+        created: "Shopping list item added."
+      destroy:
+        destroyed: "Already bought shopping list items deleted."
     qandas:
       create:
         created: "New question saved."
       update:
         updated: "Question/Answer update saved."
+    sessions:
+      create:
+        danger: "Invalid email/password combination!"
+    users:
+      create:
+        created: "User %{name} created!"
+      update:
+        updated: "Update successful!"
 
   sessions:
     headline: "Log In"
@@ -115,3 +130,55 @@ en:
     rules:
       title: "General House Rules"
       sub-headline: "Yeah, rules. Annoying, we know. But it makes a peaceful together easier. If you have any questions or you just want to discuss these rules don't be afraid to speak with your flatmates."
+
+  users:
+    deleted-user: "Deleted User"
+    form:
+      name:
+        label: "Name"
+        placeholder: "Firstname is enough"
+      email:
+        label: "Email"
+      phone:
+        label: "Phone Number"
+      picture:
+        label: "Photo"
+      birthday:
+        label: "Date of Birth"
+        placeholder: "yyyy-mm-dd ...for a b-day present? ;)"
+      moved-in:
+        label: "Moved in on"
+      moved-out:
+        label: "Moved out on"
+      description:
+        label: "Description"
+        placeholder: "Write something interesting about you. If you like."
+      language:
+        label: "Choose language for your user interface"
+      password:
+        label: "Password"
+      password-confirmation:
+        label: "Confirm Password"
+    edit:
+      title: "Edit your profile"
+    index:
+      title: "All the Flatmates"
+      sub-headline: "Who actually lives in this flat?"
+      submit-title: "Flatmate"
+    new:
+      title: "Add a new Flatmate"
+
+  admin:
+    admin:
+      index:
+        title: "Admin Dashboard"
+        user:
+          delete:
+            confirm: "Really sure to delete %{name}?"
+          deleted-user: "deleted User"
+        info:
+          delete:
+            confirm: "Sure to delete info \"%{title}\"?"
+    users:
+      edit:
+        title: "Edit %{name}s profile"

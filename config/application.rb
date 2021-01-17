@@ -27,7 +27,8 @@ module FlatshareApp
     config.active_record.default_timezone = :local
 
     # localization
-    config.i18n.default_locale = :en
+    config.i18n.available_locales = %i[en de]
+    config.i18n.default_locale = :de
 
     # since ActiveRecords needs to treat booleans as integers!
     config.active_record.sqlite3.represent_boolean_as_integer = true
