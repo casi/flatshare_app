@@ -1,4 +1,4 @@
-FROM ruby:2.6.6 as base
+FROM ruby:2.7.2 as base
 ENV RAILS_ENV=development
 COPY config/database.yml.sample config/database.yml
 ENV INSTALL_PATH /usr/src/app
