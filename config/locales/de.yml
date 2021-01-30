@@ -18,6 +18,7 @@ de:
             email:
               blank: "-Adresse fehlt."
               invalid: "-Adresse stimmt nicht."
+              taken: "schon vergeben."
             name:
               blank: "fehlt."
             password:
@@ -34,7 +35,7 @@ de:
     link-back: "Zurück"
 
   controllers:
-    applications:
+    application:
       log-in: "Bitte zuerst einloggen."
     infos:
       create:
