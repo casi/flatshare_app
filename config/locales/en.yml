@@ -1,5 +1,30 @@
 # international english translations
 en:
+  activerecord:
+    errors:
+      models:
+        info:
+          attributes:
+            content:
+              blank: "is missing."
+            title:
+              blank: "is missing."
+        qanda:
+          attributes:
+            question:
+              blank: "is missing."
+        user:
+          attributes:
+            email:
+              blank: "address is missing."
+              invalid: "address is invalid."
+              taken: "is already taken."
+            name:
+              blank: "is missing."
+            password:
+              blank: "is missing."
+              too_short: "is too short. (at least 8 characters)"
+
   time:
     formats:
       short: "%Y-%m-%d %H:%M"
@@ -9,7 +34,7 @@ en:
     link-back: "Back"
 
   controllers:
-    applications:
+    application:
       log-in: "Please log in first."
     infos:
       create:
