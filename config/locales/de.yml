@@ -1,11 +1,36 @@
 # Germany german translations
 de:
+  activerecord:
+    errors:
+      models:
+        info:
+          attributes:
+            content:
+              blank: "bitte noch eintragen."
+            title:
+              blank: "fehlt."
+        qanda:
+          attributes:
+            question:
+              blank: "bitte eintragen."
+        user:
+          attributes:
+            email:
+              blank: "-Adresse fehlt."
+              invalid: "-Adresse stimmt nicht."
+            name:
+              blank: "fehlt."
+            password:
+              blank: "fehlt."
+              too_short: "ist zu kurz. (mind. 8 Zeichen)"
+
   time:
     formats:
       short: "%d.%m.%Y %H:%M"
 
   form:
     button-save: "Speichern"
+    errors: "Ups, bitte schau noch mal genau"
     link-back: "Zurück"
 
   controllers:
