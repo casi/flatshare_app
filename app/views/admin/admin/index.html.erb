@@ -1,5 +1,5 @@
 <% provide(:title, 'Admin') %>
-<h1>Administration Dashboard</h1>
+<h1><%= t 'admin.admin.index.title' %></h1>
 
 <div class="row">
   <div class="col-md-4 col-sm-6">
@@ -11,10 +11,10 @@
           <tr>
             <td><%= user.id %></td>
             <td><%= user.name %></td>
-            <td><%= link_to "edit", edit_admin_user_path(user) %></td>
-            <td><%= link_to "delete", [:admin, user], method: :delete,
-                data: { confirm: "Are you sure want to delete #{user.name}? Think about again!" },
-                            class: 'text-danger'  %></td>
+            <td><%= link_to "...", edit_admin_user_path(user) %></td>
+            <td><%= link_to "x", [:admin, user], method: :delete,
+                data: { confirm: "#{ t 'admin.admin.index.user.delete.confirm', name: user.name }" },
+                        class: 'text-danger'  %></td>
           </tr>
           <% end %>
         </tbody>
@@ -35,11 +35,12 @@
         <% @infos_narch.each do |info| %>
           <tr>
             <td><%= l info.created_at, format: :short %></td>
-            <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
+            <td><%= info.user ? info.user.name : content_tag(:span, "#{ t 'admin.admin.index.user.deleted-user' }",
+                                                              class: "text-danger") %></td>
 
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
-                data: { confirm: "Are you sure want to delete #{info.title}?" },
+            <td><%= link_to "x", [:admin, info], method: :delete, 
+                data: { confirm: "#{ t 'admin.admin.index.info.delete.confirm', title: info.title }" },
                 class: 'text-danger' %></td>
           </tr>
         <% end %>
@@ -49,10 +50,12 @@
         <% @infos_arch.each do |info| %>
           <tr>
             <td><%= l info.created_at, format: :short %></td>
-            <td><%= info.user ? info.user.name : content_tag(:span, "Deleted User", class: "text-danger") %></td>
+            <td><%= info.user ? info.user.name : content_tag(:span, "#{ t 'admin.admin.index.user.deleted-user' }",
+                                                              class: "text-danger") %></td>
             <td><%= info.title %></td>
-            <td><%= link_to "delete", [:admin, info], method: :delete, 
-                data: { confirm: "Are you sure want to delete #{info.title}?" } %></td>
+            <td><%= link_to "x", [:admin, info], method: :delete, 
+                data: { confirm: "Are you sure want to delete #{info.title}?" },
+                class: 'text-danger' %></td>
           </tr>
         <% end %>
 

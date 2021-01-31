@@ -1,10 +1,12 @@
-<% provide(:title, 'Flatmates') %>
-<h1>All Flatmates</h1>
-<h2><span class="lead">Who actually lives in this flat?</span><br>
+<% provide(:title, "#{ t 'users.index.title' }") %>
+<h1><%= t 'users.index.title' %></h1>
+<h2><span class="lead"><%= t 'users.index.sub-headline' %></span><br>
   <div class="btn-group">
-    <%= submit_tag '+ Flatmate', type: 'button',
-                   onclick: "location.href = '#{ new_user_path }'",
-                   class: 'btn btn-success' %>
+    <%= submit_tag "+ #{ t 'users.index.submit-title' }",
+      type: 'button',
+      onclick: "location.href = '#{ new_user_path }'",
+      class: 'btn btn-success'
+    %>
   </div>
 </h2>
 
@@ -23,13 +25,13 @@
       </div>
       <div class="media-body">
         <h4 class="media-heading"><%= user.name %></h4>
-        <%= user.email %></br>
-        <%= "Phone: #{user.phone}" if user.phone? %></br>
-        <%= "Birthday: #{user.birthday.to_s}" if user.birthday? %></br>
-        <%= "Moved in: #{user.moved_in}" if user.moved_in? %></br>
-        <%= "Moved out: #{user.moved_out}" if user.moved_out? %></br>
+        <%= user.email %><br>
+        <%= "Phone: #{ user.phone }" if user.phone? %><br>
+        <%= "Birthday: #{ user.birthday.to_s }" if user.birthday? %><br>
+        <%= "Moved in: #{ user.moved_in }" if user.moved_in? %><br>
+        <%= "Moved out: #{ user.moved_out }" if user.moved_out? %><br>
       </div>
-      <p><%= "\"#{user.description}\"" if user.description? %></p>
+      <p><%= "#{ user.description }" if user.description? %></p>
     </div>
   </div>
   <% end %>

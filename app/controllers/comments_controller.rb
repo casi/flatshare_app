@@ -1,5 +1,6 @@
-class CommentsController < ApplicationController
+# frozen_string_literal: true
 
+class CommentsController < ApplicationController
   def create
     info = Info.find(params[:info_id])
     @comment = info.comments.create(comment_params)

@@ -1,14 +1,17 @@
-<% provide(:title, 'Info') %>
+<% provide(:title, "#{ t 'info.show.title' }") %>
+<% provide(:button_text, "#{ t 'comment.form.button-text' }") %>
 <div class="row">
   <h2><%= @info.title %>
-  	<%= link_to edit_info_path(@info) do %>
-  		<span class="glyphicon glyphicon-pencil"></span>
-  	<% end %>
+		<% if @info.user_id == current_user.id %>
+  		<%= link_to edit_info_path(@info) do %>
+  			<span class="glyphicon glyphicon-pencil"></span>
+  		<% end %>
+		<% end %>
   </h2>
   <div class="col-md-8 col-md-offset-2 info">
-	<p><%= @info.user ? @info.user.name : "Deleted User" %></p>
-	<small>Created: <%= l @info.created_at, format: :short %> |
-	Updated: <%= l @info.updated_at, format: :short %></small><br>
+	<p><%= @info.user ? @info.user.name : "#{ t 'users.deleted-user' }" %></p>
+	<small><%= l @info.created_at, format: :short %> |
+	<%= l @info.updated_at, format: :short %></small><br>
 	<p><%= simple_format(@info.content) %></p>
   </div>
 </div>
@@ -22,6 +25,5 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2 comment">
 	<%= render 'comments/form' %>
-  	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <%= link_to 'Back', infos_path %>
   </div>
 </div>

@@ -1,9 +1,9 @@
-<% provide(:title, 'Q&A') %>
-<h1>Questions & Answers</h1>
+<% provide(:title, "#{ t 'qandas.index.title' }") %>
+<h1><%= t 'qandas.index.title' %></h1>
 <h2>
-  <span class="lead">Do you have questions or answers about our flatshare, [flat_city] or [flat_country] in general?</span><br>
+  <span class="lead"><%= t 'qandas.index.sub-headline' %></span><br>
   <div class="btn-group">
-    <%= submit_tag '+ Question', type: 'button',
+    <%= submit_tag "+ #{ t 'qandas.index.submit-title' }", type: 'button',
                    onclick: "location.href = '#{ new_qanda_path }'",
                    class: 'btn btn-success' %>
   </div>

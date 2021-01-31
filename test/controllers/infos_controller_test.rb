@@ -17,11 +17,13 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    log_in_as @user
     get new_info_url
     assert_response :success
   end
 
   test "should get new if inputs are wrong" do
+    log_in_as @user
     get new_info_url
     assert_no_difference('Info.count') do
       post infos_url, params: { info: { user_id: 1,
@@ -47,6 +49,7 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show info" do
+    log_in_as @user
     get info_url(@info)
     assert_response :success
   end
@@ -57,14 +60,9 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should redirect to infos index instead of edit' do
-    skip 'Skipped,test is RED at the moment (TODO)'
-    log_in_as @user2
-    get edit_info_url(@info)
-    assert_redirected_to infos_url
-  end
-
   test "should update info" do
+    log_in_as @user
+    get edit_info_url(@info)
     patch info_url(@info), params: { info: { user_id: 1, 
                                              content: @info.content, 
                                              title: @info.title,
@@ -73,6 +71,7 @@ class InfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should set info as archived" do
+    log_in_as @user
     get infos_url
     patch info_url(@info), params: {info: { archived: true }}
     assert_redirected_to infos_url

@@ -1,18 +1,18 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1><%= t 'sessions.headline' %></h1>
 
 <%= form_for(:session, url: login_path, html: {class: 'form-signin'}) do |f| %>
   <div class="form-group">
-    <%= f.label :email %>
+    <label for="session_email"><%= t 'sessions.label.email' %></label>
     <%= f.email_field :email, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password %>
+    <label for="session_password"><%= t 'sessions.label.password' %></label>
     <%= f.password_field :password, class: 'form-control' %>
   </div>
   <div class="btn-group">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= f.submit "#{ t('sessions.submit') }", class: 'btn btn-primary' %>
   </div>
 <% end %>
-<p class="text-center">If you don't have an account please ask a flatmate to create it for you.</p>
+<p class="text-center"><%= t 'sessions.info' %></p>

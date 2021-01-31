@@ -1,9 +1,8 @@
-<% provide(:title, "Housework") %>
-<h1>Housework Rota</h1>
-<h2 class="lead">Our current housework rota (static version).</h2>
+<% provide(:title, "#{ t 'static-pages.housework.title' }") %>
+<h1><%= t 'static-pages.housework.title' %></h1>
+<h2 class="lead"><%= t 'static-pages.housework.sub-headline' %></h2>
 
 <div class="row rota">
-  <h3>Rota 2017</h3>
   <!-- TODO: dynamic house rota -->
   <%= image_tag("/images/housework_rota_2017.png", alt: "housework rota (static)", class: "img-responsive") %>
 </div>
@@ -15,7 +14,7 @@
         <div class="panel-heading" role="tab" id="heading">
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="false" aria-controls="collapse">
-              Explanations (What should I do and when?)
+              <%= t 'static-pages.housework.panel-headline' %>
             </a>
           </h4>
         </div>
