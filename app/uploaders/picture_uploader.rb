@@ -10,11 +10,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
   version :default do
-    process resize_to_limit: [110, 110]
+    process resize_to_fill: [110, 110]
   end
 
   version :thumb, from_version: :default do
-    process resize_to_limit: [75, 75]
+    process resize_to_fill: [75, 75]
   end
 
   def extension_white_list

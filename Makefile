@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := spec
+
 init:
 	make build
 	@cp config/database.yml.sample config/database.yml
@@ -39,6 +41,10 @@ start:
 
 stop:
 	docker-compose -f docker-compose.yml down
+
+restart:
+	make stop
+	make start
 
 setup:
 	make stop
