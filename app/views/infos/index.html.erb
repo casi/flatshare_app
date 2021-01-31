@@ -22,14 +22,18 @@
           <%= image_tag 'default_img.png', class: 'img-rounded' %>
         <% end %>
 				<%= info.user ? info.user.name : content_tag(:i, "#{ t 'users.deleted-user' }") %><br>
-				<%= link_to "#{ t 'info.index.link.edit' }", edit_info_path(info) %> |
-				<%= link_to "#{ t 'info.index.link.to-archive' }", info_path(info, "info[archived]" => true), method: :put %>
+				<% if info.user_id == current_user.id %>
+					<%= link_to "#{ t 'info.index.link.edit' }", edit_info_path(info) %> |
+					<%= link_to "#{ t 'info.index.link.to-archive' }", info_path(info, "info[archived]" => true), method: :put %>
+				<% end %>
 			</div>
 			<div class="col-md-10 col-sm-10 col-xs-9">
 				<span class="small"><%= l info.created_at, format: :short %></span>
 				<h3>
 					<%= link_to info.title, info_path(info) %>
-					<span class="badge"><%= info.comments.count if info.comments.count > 0 %></span>
+					<% if info.comments&.size > 0 %>
+						<span class="badge"><%= info.comments&.size %></span>
+					<% end %>
 				</h3>
 				<%= simple_format(info.content) %>
 			</div>

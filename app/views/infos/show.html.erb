@@ -2,9 +2,11 @@
 <% provide(:button_text, "#{ t 'comment.form.button-text' }") %>
 <div class="row">
   <h2><%= @info.title %>
-  	<%= link_to edit_info_path(@info) do %>
-  		<span class="glyphicon glyphicon-pencil"></span>
-  	<% end %>
+		<% if @info.user_id == current_user.id %>
+  		<%= link_to edit_info_path(@info) do %>
+  			<span class="glyphicon glyphicon-pencil"></span>
+  		<% end %>
+		<% end %>
   </h2>
   <div class="col-md-8 col-md-offset-2 info">
 	<p><%= @info.user ? @info.user.name : "#{ t 'users.deleted-user' }" %></p>
