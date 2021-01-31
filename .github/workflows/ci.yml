@@ -1,24 +1,45 @@
-name: Run CI
+name: CI
 
 on:
   push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  deploy:
-    name: Deploy
+  ci:
+    name: CI
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgres://postgres@localhost:5433/flatshare_app_test
+
+    services:
+      db:
+        image: postgres:10.13
+        ports: ["5433:5432"]
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: flatshare_app_test
+
     steps:
       - name: Checkout code
         id: checkout-code
         uses: actions/checkout@v2
-      - name: Setup application
-        id: setup-app
-        uses: make setup
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2
+          bundler-cache: true
+      # - name: Install bundler
+      #   id: install-bundler
+      #   run: gem install bundler
+      # - name: Install dependencies
+      #   id: install-dependencies
+      #   run: bundle install
       - name: Run Spec
         id: run-spec
-        uses: make
+        env:
+          RAILS_ENV: test
+        run: |
+          cp config/database.yml.sample config/database.yml
+          bundle exec rake
