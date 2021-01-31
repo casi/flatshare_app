@@ -1,4 +1,4 @@
-FROM ruby:2.6.6 as base
+FROM ruby:2.7.2 as base
 ENV RAILS_ENV=development
 COPY config/database.yml.sample config/database.yml
 ENV INSTALL_PATH /usr/src/app
@@ -6,6 +6,7 @@ RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 
 FROM base as dev
+RUN gem install bundler
 ENV BUNDLE_PATH=/bundle \
     BUNDLE_BIN=/bundle/bin \
     GEM_HOME=/bundle
