@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ListitemsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: %i[index edit update destroy]
 
   def index
     @shopping_items = Listitem.all

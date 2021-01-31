@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class QandasController < ApplicationController
-  before_action :logged_in_user, only: [:index]
+  before_action :logged_in_user, only: %i[index edit update]
 
   def index
     @qandas = Qanda.all

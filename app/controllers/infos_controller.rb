@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class InfosController < ApplicationController
-  before_action :logged_in_user, only: %i[index create]
+  before_action :logged_in_user, only: %i[index show edit update archived]
   before_action :set_info, only: %i[show edit update]
 
   def index
     @infos = Info.not_archived
-    @archived_count = Info.archived.count
+    @archived_count = Info.archived.size
   end
 
   def show
@@ -17,7 +17,14 @@ class InfosController < ApplicationController
     @info = Info.new
   end
 
-  def edit; end
+  def edit
+    @info = Info.find(params[:id])
+    if @info.user_id == current_user.id
+      render :edit
+    else
+      render :show
+    end
+  end
 
   def create
     @info = current_user.infos.build(info_params)
