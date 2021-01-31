@@ -1,6 +1,6 @@
 # Flatshare app
 ![logo](./docs/logo.png)
-[![Github Build Status](https://github.com/casi/flatshare_app/workflows/ci/badge.svg)
+[![Github Build Status](https://github.com/casi/flatshare_app/workflows/ci/badge.svg)](https://github.com/casi/flatshare_app/workflows/ci/badge.svg)
 [![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
 [![Test Coverage](https://codeclimate.com/github/casi/flatshare_app/badges/coverage.svg)](https://codeclimate.com/github/casi/flatshare_app/coverage)
 
