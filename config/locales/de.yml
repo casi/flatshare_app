@@ -179,8 +179,8 @@ de:
       description:
         label: "Beschreibung"
         placeholder: "Schreibe was Interessantes über dich, wenn du magst."
-      language:
-        label: "Wähle deine Sprache"
+      locale:
+        label: "Sprache"
       password:
         label: "Passwort"
       password-confirmation:

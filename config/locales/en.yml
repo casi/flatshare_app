@@ -178,8 +178,8 @@ en:
       description:
         label: "Description"
         placeholder: "Write something interesting about you. If you like."
-      language:
-        label: "Choose language for your user interface"
+      locale:
+        label: "Language"
       password:
         label: "Password"
       password-confirmation:

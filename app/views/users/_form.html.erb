@@ -38,10 +38,14 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 col-sm-12 form-group">
+    <div class="col-md-10 col-sm-9 form-group">
       <%= f.label "#{ t 'users.form.description.label' }" %>
       <%= f.text_area :description, class: 'form-control', size: '10x6',
                       placeholder: "#{ t 'users.form.description.placeholder' }" %>
+    </div>
+    <div class="col-md-2 col-sm-3 form-group">
+      <%= f.label "#{ t 'users.form.locale.label' }" %>
+      <%= f.select :locale, options_for_select(I18n.available_locales, I18n.locale), {}, { class: 'form-control' } %>
     </div>
   </div>
 

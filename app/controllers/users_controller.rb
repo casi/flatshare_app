@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit]
+  before_action :logged_in_user, only: %i[index edit update]
 
   def index
     @users = User.all
@@ -39,20 +41,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :phone, :birthday,
                                  :moved_in, :moved_out,
                                  :description, :password,
-                                 :password_confirmation, :picture)
+                                 :password_confirmation, :picture,
+                                 :locale)
   end
-
-=begin
-  # Before filters
-
-  # Confirms the correct user.
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
-
-  # Confirms an admin user.
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-=end
 end
