@@ -1,3 +1,6 @@
+# CI exposed atm.
+# bugged and switch to Github Action is taken in consideration
+
 env:
   global:
     - CC_TEST_REPORTER_ID=bb14388ebb5a531a23420549e5585394bc9c9dbee42b75eda0f8b05f8090c0c6
