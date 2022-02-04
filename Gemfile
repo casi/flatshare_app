@@ -12,17 +12,19 @@ gem 'carrierwave'
 gem 'jbuilder',       '~> 2.10'
 gem 'jquery-rails'
 gem 'mini_magick',    '~> 4.10'
+gem 'mimemagic', '~> 0.4.3' #, github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'puma'
-gem 'pg', '~> 1.2', '>= 1.2.3'
+gem 'pg',             '~> 1.2', '>= 1.2.3'
 
 gem 'bootstrap-sass'
 gem 'sassc-rails'
 gem 'uglifier'
 
-gem 'rails',          '~> 5.2.4'
+gem 'rails',          '~> 5.2.6'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
-gem 'therubyracer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby
+gem 'mini_racer'
 
 group :development, :test do
   gem 'faker'
@@ -57,4 +59,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
