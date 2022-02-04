@@ -7,12 +7,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.7.5'
+
 gem 'bcrypt'
 gem 'carrierwave'
 gem 'jbuilder',       '~> 2.10'
 gem 'jquery-rails'
 gem 'mini_magick',    '~> 4.10'
-gem 'mimemagic', '~> 0.4.3' #, github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+gem 'mimemagic',      '~> 0.4.3'
 gem 'puma'
 gem 'pg',             '~> 1.2', '>= 1.2.3'
 
