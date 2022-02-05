@@ -26,7 +26,7 @@ gem 'rails',          '~> 5.2.6'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
 # gem 'therubyracer', platforms: :ruby
-gem 'mini_racer'
+gem 'mini_racer',     '~> 0.4.0'
 
 group :development, :test do
   gem 'faker'
