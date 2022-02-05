@@ -2,15 +2,15 @@
 <%= render 'shared/error_messages', object: @info %>
 
 <div class="form-group">
-	<%= f.label :title %>
+	<%= f.label "#{ t 'info.form.title.label' }" %>
 	<%= f.text_field :title, class: 'form-control',
-	placeholder: 'concise title which describes content the best' %>
+	placeholder: "#{ t 'info.form.title.placeholder' }" %>
 </div>
 
 <div class="form-group">
-	<%= f.label :content %>
+	<%= f.label "#{ t 'info.form.content.label' }" %>
 	<%= f.text_area :content, size: '10x10', class: 'form-control',
-	placeholder: 'something new or flatshare related stuff...' %>
+	placeholder: "#{ t 'info.form.content.placeholder' }" %>
 </div>
 
 <div class="btn-group">
@@ -19,3 +19,4 @@
 <% end %>
 
 <br>
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= link_to "#{ t 'info.form.link-back' }", infos_path %>

@@ -22,22 +22,22 @@ class QandasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create qanda" do
     assert_difference('Qanda.count') do
-		post qandas_url, params: { qanda: { question: @qanda.question, 
-                                        answer: @qanda.answer } }
+      post qandas_url, params: { qanda: { question: @qanda.question,
+                                          answer: @qanda.answer } }
     end
-
     assert_redirected_to qandas_url
   end
 
   test "should get edit" do
+    log_in_as @user
     get edit_qanda_url(@qanda)
     assert_response :success
   end
 
   test "should update qanda" do
+    log_in_as @user
     patch qanda_url(@qanda), params: { qanda: { question: @qanda.question, 
                                             	  answer: @qanda.answer } }
     assert_redirected_to qandas_url
   end
-
 end

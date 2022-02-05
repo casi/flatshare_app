@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ListitemsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: %i[index edit update destroy]
 
   def index
     @shopping_items = Listitem.all
@@ -11,14 +13,14 @@ class ListitemsController < ApplicationController
     @shopping_item.done = false
 
     if @shopping_item.save
-      flash[:success] = 'Shopping list item added.'
+      flash[:success] = t 'controllers.listitems.create.created'
       redirect_to listitems_url
     end
   end
 
   def update
   	@shopping_item = Listitem.find(params[:id])
-    
+
     if @shopping_item.update(list_params)
       redirect_to listitems_url
     end
@@ -29,7 +31,7 @@ class ListitemsController < ApplicationController
 
     if @shopping_items.count > 0
       if @shopping_items.destroy_all
-        flash[:success] = 'Shopping list items, which are already bought, deleted.'
+        flash[:success] = t 'controllers.listitems.destroy.destroyed'
         redirect_to listitems_url
       end
     end
@@ -40,5 +42,4 @@ class ListitemsController < ApplicationController
   def list_params
     params.require(:listitem).permit(:item, :done)
   end
-
 end

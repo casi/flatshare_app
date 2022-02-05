@@ -1,10 +1,9 @@
-<% provide(:title, 'Edit Info') %>
-<% provide(:button_text, 'Save changes') %>
-<h1>Update Info</h1>
+<% provide(:title, "#{ t 'info.edit.title' }") %>
+<% provide(:button_text, "#{ t 'info.edit.button-text' }") %>
+<h1><%= t 'info.edit.title' %></h1>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <%= render 'form', info: @info %>
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= link_to 'Back', infos_path %>
   </div>
 </div>

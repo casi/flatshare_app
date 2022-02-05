@@ -1,26 +1,209 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+# international english translations
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        info:
+          attributes:
+            content:
+              blank: "is missing."
+            title:
+              blank: "is missing."
+        qanda:
+          attributes:
+            question:
+              blank: "is missing."
+        user:
+          attributes:
+            email:
+              blank: "address is missing."
+              invalid: "address is invalid."
+              taken: "is already taken."
+            name:
+              blank: "is missing."
+            password:
+              blank: "is missing."
+              too_short: "is too short. (at least 8 characters)"
+
   time:
     formats:
       short: "%Y-%m-%d %H:%M"
+
+  form:
+    button-save: "Save"
+    link-back: "Back"
+
+  controllers:
+    application:
+      log-in: "Please log in first."
+    infos:
+      create:
+        created: "New Info created."
+      update:
+        updated: "Info has been updated."
+      archived: "Info archived (for gleaning)."
+    listitems:
+      create:
+        created: "Shopping list item added."
+      destroy:
+        destroyed: "Already bought shopping list items deleted."
+    qandas:
+      create:
+        created: "New question saved."
+      update:
+        updated: "Question/Answer update saved."
+    sessions:
+      create:
+        danger: "Invalid email/password combination!"
+    users:
+      create:
+        created: "User %{name} created!"
+      update:
+        updated: "Update successful!"
+
+  sessions:
+    headline: "Log In"
+    label:
+      email: "Email"
+      password: "Password"
+    submit: "Enter"
+    info: "If you don't have an account please ask a flatmate to create one for you."
+
+  mainmenu:
+    infos: "Infos"
+    q-and-a: "Qs & As"
+    house-rules: "House Rules"
+    list:
+      name: "List"
+      title: "Shopping List"
+    housework:
+      name: "Housework"
+      title: "Housework (don't forget!)"
+    flatmates:
+      name: "Flatmates"
+      title: "Persons who we live together"
+    edit-profile: "Edit Profile"
+    log-out: "Log out"
+
+  comment:
+    form:
+      placeholder: "Write a comment"
+      button-text: "Save"
+      link-back: "back"
+
+  info:
+    form:
+      title:
+        label: "Title"
+        placeholder: "Concise title which describes the news the best"
+      content:
+        label: "Content"
+        placeholder: "Write something new or flatshare related stuff..."
+      link-back: "back"
+    archive:
+      title: "The Infos Archive"
+    edit:
+      title: "Edit Info"
+      button-text: "Save changes"
+    index:
+      title: "Infos"
+      sub-headline: "What's new in our shared flat community?"
+      submit-title: "Info"
+      archive-link: "Archive"
+      marginal:
+        head1: "You live here"
+        head2: "Local Public Transport"
+      link:
+        edit: "Edit"
+        to-archive: "to archive"
+    new:
+      title: "New Info"
+      button-text: "Save"
+    show:
+      title: "Info"
+
+  listitems:
+    title: "Shopping List"
+    sub-headline: "What is needed for the shared flat (e.g. washing-up liquid, toilet paper, laundry detergent, etc.)? Everyone should buy these things from time to time."
+    modal-title: "Add a new thing to buy"
+
+  qandas:
+    form:
+      question:
+        label: "Question"
+        placeholder: "What do you want to know"
+      answer:
+        label: "Answer"
+        placeholder: "If you know the answer ..."
+      link-back: "Back"
+    edit:
+      title: "Edit Question/Answer"
+      button-text: ""
+    index:
+      title: "Questions and Answers"
+      sub-headline: "Do you have questions or answers about our flatshare, %{flat_city} or %{flat_country} in general?"
+      submit-title: "Question"
+    new:
+      title: "New Question"
+      button-text: "Save"
+
+  static-pages:
+    housework:
+      title: "Housework Rota"
+      sub-headline: "Our current housework rota/cleaning plan (static version)."
+      panel-headline: "Explanations (What should I do and when?)"
+    rules:
+      title: "General House Rules"
+      sub-headline: "Yeah, rules. Annoying, we know. But it makes a peaceful together easier. If you have any questions or you just want to discuss these rules don't be afraid to speak with your flatmates."
+
+  users:
+    deleted-user: "Deleted User"
+    form:
+      name:
+        label: "Name"
+        placeholder: "Firstname is enough"
+      email:
+        label: "Email"
+      phone:
+        label: "Phone Number"
+      picture:
+        label: "Photo"
+      birthday:
+        label: "Date of Birth"
+        placeholder: "yyyy-mm-dd ...for a b-day present? ;)"
+      moved-in:
+        label: "Moved in on"
+      moved-out:
+        label: "Moved out on"
+      description:
+        label: "Description"
+        placeholder: "Write something interesting about you. If you like."
+      locale:
+        label: "Language"
+      password:
+        label: "Password"
+      password-confirmation:
+        label: "Confirm Password"
+    edit:
+      title: "Edit your profile"
+    index:
+      title: "All the Flatmates"
+      sub-headline: "Who actually lives in this flat?"
+      submit-title: "Flatmate"
+    new:
+      title: "Add a new Flatmate"
+
+  admin:
+    admin:
+      index:
+        title: "Admin Dashboard"
+        user:
+          delete:
+            confirm: "Really sure to delete %{name}?"
+          deleted-user: "deleted User"
+        info:
+          delete:
+            confirm: "Sure to delete info \"%{title}\"?"
+    users:
+      edit:
+        title: "Edit %{name}s profile"
