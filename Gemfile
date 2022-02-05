@@ -22,11 +22,11 @@ gem 'bootstrap-sass'
 gem 'sassc-rails'
 gem 'uglifier'
 
-gem 'rails',          '~> 5.2.6'
+gem 'rails',          '~> 6.0.4'
 gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
-# gem 'therubyracer', platforms: :ruby
-gem 'mini_racer',     '~> 0.4.0'
+gem 'mini_racer' #,     '>= 0.4.0'
+gem 'bootsnap',       '~> 1.4.2'
 
 group :development, :test do
   gem 'faker'

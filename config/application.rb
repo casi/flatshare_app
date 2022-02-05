@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'boot'
 
 require 'rails/all'
@@ -10,18 +8,13 @@ Bundler.require(*Rails.groups)
 
 module FlatshareApp
   class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.0
+
     # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-
-    # Version. Only attempt update on local machine
-    if Rails.env.development?
-      # Update version file from latest git tag
-      File.open('config/version', 'w') do |file|
-        file.write `git describe --tags --always`
-      end
-    end
-
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
     config.version = File.read('config/version')
     config.time_zone = 'Berlin'
     config.active_record.default_timezone = :local
