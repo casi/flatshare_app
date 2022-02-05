@@ -9,7 +9,7 @@ on:
 jobs:
   ci:
     name: CI
-    runs-on: debian-latest
+    runs-on: ubuntu-20.04
     env:
       DATABASE_URL: postgres://postgres@localhost:5433/flatshare_app_test
 
