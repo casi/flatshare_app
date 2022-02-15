@@ -21,7 +21,7 @@ stop-db:
 	docker-compose -f docker-compose.yml stop db
 
 create-db:
-	docker-compose -f docker-compose.yml run --rm app rails db:drop
+	docker-compose -f docker-compose.yml run --rm app rails db:drop RAILS_ENV=development DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 	docker-compose -f docker-compose.yml run --rm app rails db:create
 
 migrate-db:

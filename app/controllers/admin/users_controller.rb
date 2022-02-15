@@ -8,7 +8,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       flash[:success] = "Update successful!"
       redirect_to edit_admin_user_url
     else
