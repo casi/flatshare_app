@@ -22,11 +22,11 @@ gem 'bootstrap-sass'
 gem 'sassc-rails'
 gem 'uglifier'
 
-gem 'rails',          '~> 5.2.6'
-gem 'sqlite3'
+gem 'rails',          '~> 6.1.0'
+# gem 'sqlite3'
 gem 'turbolinks',     '~> 5'
-# gem 'therubyracer', platforms: :ruby
-gem 'mini_racer',     '~> 0.4.0'
+gem 'mini_racer'
+gem 'bootsnap',       '>= 1.9.3', require: false
 
 group :development, :test do
   gem 'faker'
@@ -39,7 +39,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen',                 '>= 3.0.5', '< 3.2'
+  gem 'listen',                 '~> 3.3'
   gem 'spring'
   gem 'spring-watcher-listen',  '~> 2.0.0'
   gem 'web-console',            '>= 3.3.0'

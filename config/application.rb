@@ -1,8 +1,6 @@
-# frozen_string_literal: true
+require_relative "boot"
 
-require_relative 'boot'
-
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,18 +8,16 @@ Bundler.require(*Rails.groups)
 
 module FlatshareApp
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.0
 
-    # Version. Only attempt update on local machine
-    if Rails.env.development?
-      # Update version file from latest git tag
-      File.open('config/version', 'w') do |file|
-        file.write `git describe --tags --always`
-      end
-    end
-
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
+    # config.time_zone = "Central Time (US & Canada)"
+    # config.eager_load_paths << Rails.root.join("extras")
     config.version = File.read('config/version')
     config.time_zone = 'Berlin'
     config.active_record.default_timezone = :local
@@ -29,8 +25,5 @@ module FlatshareApp
     # localization
     config.i18n.available_locales = %i[en de]
     config.i18n.default_locale = :en
-
-    # since ActiveRecords needs to treat booleans as integers!
-    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
