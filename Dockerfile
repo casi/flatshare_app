@@ -6,11 +6,11 @@ RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 
 FROM base as dev
-RUN gem install bundler
 ENV BUNDLE_PATH=/bundle \
     BUNDLE_BIN=/bundle/bin \
     GEM_HOME=/bundle
-ENV PATH="${BUNDLE_BIN}:${PATH}"
+ENV PATH="${GEM_HOME}/bin:${GEM_HOME}/gems/bin:${BUNDLE_BIN}:${PATH}"
+RUN gem install bundler
 
 FROM base as production
 ENV RAILS_ENV=production
