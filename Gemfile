@@ -10,31 +10,30 @@ end
 ruby '2.7.5'
 
 gem 'bcrypt'
+gem 'bootsnap',       '>= 1.9.3', require: false
 gem 'carrierwave'
 gem 'jbuilder',       '~> 2.10'
-gem 'jquery-rails'
 gem 'mini_magick',    '~> 4.10'
 gem 'mimemagic',      '~> 0.4.3'
 gem 'puma'
 gem 'pg',             '~> 1.2', '>= 1.2.3'
+gem 'rails',          '~> 6.1.0'
 
+# frontend gems
 gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'mini_racer'
 gem 'sassc-rails'
+gem 'turbolinks',     '~> 5'
 gem 'uglifier'
 
-gem 'rails',          '~> 6.1.0'
-# gem 'sqlite3'
-gem 'turbolinks',     '~> 5'
-gem 'mini_racer'
-gem 'bootsnap',       '>= 1.9.3', require: false
-
 group :development, :test do
-  gem 'faker'
   # BEGIN: copied from :default scope because we pre-compile in prod
   gem 'coffee-rails'
   # END: copied from :default scope because we pre-compile in prod
   gem 'awesome_print'
   gem 'byebug', platform: :mri
+  gem 'faker'
   gem 'pry', '~> 0.13.1'
 end
 
