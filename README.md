@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/casi/flatshare_app/badges/gpa.svg)](https://codeclimate.com/github/casi/flatshare_app)
 [![Test Coverage](https://codeclimate.com/github/casi/flatshare_app/badges/coverage.svg)](https://codeclimate.com/github/casi/flatshare_app/coverage)
 
-This small application (written with **Rails 5**) lets members of a shared flat manage their shared flat related informations, contracts, house rules, cleaning rota, events etc. (at least that is the plan ;) )
+This small application lets members of a shared flat manage their shared flat related informations, contracts, house rules, cleaning rota, events etc. (at least that is the plan ;) )
 
 ## Getting Started
 
@@ -22,6 +22,23 @@ After cloning this repository run:
 ```bash
 make setup
 ```
+
+### First Start
+
+To start/stop/restart the app run:
+
+```bash
+make start
+make stop
+make restart
+```
+
+The URL is `http://localhost:3000` and the initial login credentials are
+
+User: `admin@example.org`  
+Password: `password`
+
+**Important (especially in a productive environment):** You should **CHANGE** User and Password to your own user mail and password in the user settings - immediately after first login!!!
 
 ## Running the tests
 
