@@ -37,8 +37,6 @@ checks:
   identical-code:
     enabled: true
 plugins:
-  rubocop:
-    enabled: true
   fixme:
     enabled: true
   brakeman:

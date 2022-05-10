@@ -7,8 +7,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.7.6'
-
 gem 'bcrypt'
 gem 'bootsnap',       '>= 1.9.3', require: false
 gem 'carrierwave'
