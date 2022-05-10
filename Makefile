@@ -1,3 +1,6 @@
+COMPOSE      = docker-compose -f docker-compose.yml
+COMPOSE_PROD = docker-compose -f docker-compose-prod.yml
+
 .DEFAULT_GOAL := spec
 
 init:
@@ -8,39 +11,39 @@ clean:
 	docker volume rm flatshare_app_postgres
 
 build:
-	docker-compose -f docker-compose.yml build
+	$(COMPOSE) build
 
 bundle:
 	make build
-	docker-compose -f docker-compose.yml run --rm app bundle
+	$(COMPOSE) run --rm app bundle
 
 start-db:
-	docker-compose -f docker-compose.yml up -d db
+	$(COMPOSE) up -d db
 
 stop-db:
-	docker-compose -f docker-compose.yml stop db
+	$(COMPOSE) stop db
 
 create-db:
-	docker-compose -f docker-compose.yml run --rm app rails db:drop RAILS_ENV=development DISABLE_DATABASE_ENVIRONMENT_CHECK=1
-	docker-compose -f docker-compose.yml run --rm app rails db:create
+	$(COMPOSE) run --rm app rails db:drop RAILS_ENV=development DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+	$(COMPOSE) run --rm app rails db:create
 
 migrate-db:
-	docker-compose -f docker-compose.yml run --rm app rails db:migrate
+	$(COMPOSE) run --rm app rails db:migrate
 
 seed-db:
-	docker-compose -f docker-compose.yml run --rm app rails db:seed
+	$(COMPOSE) run --rm app rails db:seed
 
 dev:
-	docker-compose -f docker-compose.yml run --rm app sh
+	$(COMPOSE) run --rm app sh
 
 spec:
-	docker-compose -f docker-compose.yml run --rm app sh -c 'RAILS_ENV=test rake'
+	$(COMPOSE) run --rm app sh -c 'RAILS_ENV=test rake'
 
 start:
-	docker-compose -f docker-compose.yml up -d
+	$(COMPOSE) up -d
 
 stop:
-	docker-compose -f docker-compose.yml down
+	$(COMPOSE) down
 
 restart:
 	make stop
@@ -60,19 +63,19 @@ setup:
 generate_env:
 	@rm -f .env.production
 	@touch .env.production
-	docker-compose -f docker-compose-prod.yml down
-	docker-compose -f docker-compose-base.yml run app ruby bin/generate_password > .env.production
+	$(COMPOSE_PROD) down
+	docker-compose -f docker-compose-base.yml run app bin/generate_password > .env.production
 	@echo RAILS_ENV=production >> .env.production
 
 deploy:
-	docker-compose -f docker-compose-prod.yml up -d --build
-	docker-compose -f docker-compose-prod.yml exec app bundle exec rails db:create
-	docker-compose -f docker-compose-prod.yml exec app bundle exec rails db:migrate
-	docker-compose -f docker-compose-prod.yml exec app bundle exec rails assets:precompile
-	docker-compose -f docker-compose-prod.yml restart
+	$(COMPOSE_PROD) up -d --build
+	$(COMPOSE_PROD) exec app bundle exec rails db:create
+	$(COMPOSE_PROD) exec app bundle exec rails db:migrate
+	$(COMPOSE_PROD) exec app bundle exec rails assets:precompile
+	$(COMPOSE_PROD) restart
 
 bash:
-	docker-compose -f docker-compose-prod.yml run --rm app bash
+	$(COMPOSE_PROD) run --rm app bash
 
 console:
-	docker-compose -f docker-compose-prod.yml exec app bundle exec rails c
+	$(COMPOSE_PROD) exec app bundle exec rails c

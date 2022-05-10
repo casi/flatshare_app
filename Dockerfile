@@ -16,6 +16,6 @@ FROM base as production
 ENV RAILS_ENV=production
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
-RUN bundle install --jobs 20 --retry 5 --deployment --without development test
+RUN bundle config set without 'development test' && bundle config set deployment 'true'
+RUN bundle install --jobs 20 --retry 5
 COPY . .
-
