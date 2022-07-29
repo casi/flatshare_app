@@ -9,17 +9,7 @@ on:
 jobs:
   ci:
     name: CI
-    runs-on: ubuntu-20.04
-    env:
-      DATABASE_URL: postgres://postgres@localhost:5433/flatshare_app_test
-
-    services:
-      db:
-        image: postgres:14.2
-        ports: ["5433:5432"]
-        env:
-          POSTGRES_HOST_AUTH_METHOD: trust
-          POSTGRES_DB: flatshare_app_test
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -28,14 +18,14 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.6
+          ruby-version: 3.1.2
           bundler-cache: true
-      # - name: Install bundler
-      #   id: install-bundler
-      #   run: gem install bundler
-      # - name: Install dependencies
-      #   id: install-dependencies
-      #   run: bundle install
+      - name: Install bundler
+        id: install-bundler
+        run: gem install bundler
+      - name: Install dependencies
+        id: install-dependencies
+        run: bundle install
       - name: Run Spec
         id: run-spec
         env:
