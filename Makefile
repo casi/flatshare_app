@@ -8,7 +8,7 @@ init:
 	@cp config/database.yml.sample config/database.yml
 
 clean:
-	docker volume rm flatshare_app_postgres
+	docker volume rm flatshare_app_db-data
 
 build:
 	$(COMPOSE) build
@@ -17,14 +17,8 @@ bundle:
 	make build
 	$(COMPOSE) run --rm app bundle
 
-start-db:
-	$(COMPOSE) up -d db
-
-stop-db:
-	$(COMPOSE) stop db
-
 create-db:
-	$(COMPOSE) run --rm app rails db:drop RAILS_ENV=development DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+	$(COMPOSE) run --rm app rails db:drop
 	$(COMPOSE) run --rm app rails db:create
 
 migrate-db:
@@ -46,18 +40,16 @@ stop:
 	$(COMPOSE) down
 
 restart:
-	make stop
-	make start
+	$(COMPOSE) stop
+	$(COMPOSE) start
 
 setup:
 	make stop
 	make init
 	make bundle
-	make start-db
 	make create-db
 	make migrate-db
 	make seed-db
-	make stop-db
 
 #production
 generate_env:

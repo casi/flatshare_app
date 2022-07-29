@@ -7,28 +7,29 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bcrypt'
+gem 'bcrypt',         '~> 3.1.7'
 gem 'bootsnap',       '>= 1.9.3', require: false
-gem 'carrierwave'
+gem 'carrierwave',    '~> 2.2'
 gem 'jbuilder',       '~> 2.10'
 gem 'mini_magick',    '~> 4.10'
-gem 'mimemagic',      '~> 0.4.3'
-gem 'puma'
-gem 'pg',             '~> 1.2', '>= 1.2.3'
+gem 'puma',           '~> 5.0'
 gem 'rails',          '~> 6.1.0'
+gem 'sqlite3',        '~> 1.4'
+
+## Due to newly libffi requirements
+gem 'ffi'
+# a Ruby 3.1 requirement
+gem 'net-smtp'
 
 # frontend gems
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'mini_racer'
 gem 'sassc-rails'
-gem 'turbolinks',     '~> 5'
+gem 'turbolinks',     '~> 5.2.0'
 gem 'uglifier'
 
 group :development, :test do
-  # BEGIN: copied from :default scope because we pre-compile in prod
-  gem 'coffee-rails'
-  # END: copied from :default scope because we pre-compile in prod
   gem 'awesome_print'
   gem 'byebug', platform: :mri
   gem 'faker'
@@ -39,12 +40,11 @@ group :development do
   gem 'listen',                 '~> 3.3'
   gem 'spring'
   gem 'spring-watcher-listen',  '~> 2.0.0'
-  gem 'web-console',            '>= 3.3.0'
+  gem 'web-console',            '>= 4.1.0'
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  # gem 'chromedriver-helper'
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest-reporters'
