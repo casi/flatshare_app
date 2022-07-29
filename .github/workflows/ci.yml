@@ -30,6 +30,7 @@ jobs:
         id: run-spec
         env:
           RAILS_ENV: test
+          DB_PATH: /db-data
         run: |
           cp config/database.yml.sample config/database.yml
           bundle exec rake
